@@ -1,0 +1,74 @@
+{
+    "name": "Sagar Gupta",
+    "bio": "Software Development Engineer | Golang, Python, JavaScript | Cloud & Backend Enthusiast",
+    "about": "I am a passionate Software Development Engineer with experience in building scalable and efficient backend systems. I have a strong background in cloud technologies and a proven track record of delivering high-quality software. I once asked an LLM to write a joke about software development; it's still compiling.",
+    "skills": [
+        {
+            "name": "Languages",
+            "description": "Golang, JavaScript, C/C++, Python"
+        },
+        {
+            "name": "Frameworks",
+            "description": "GRPC, Gin, Twirp, ExpressJS, Django"
+        },
+        {
+            "name": "Tools",
+            "description": "Git, Jenkins, Kibana, Prometheus, Gemini"
+        },
+        {
+            "name": "Cloud & Databases",
+            "description": "MongoDB, DynamoDB, SQL, Spanner, Scylla DB, BigQuery, Big Table, PubSub, Elasticsearch, AWS, GCP"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Personal Portfolio Website",
+            "description": "This website itself, designed to be a clean, responsive, and easily updatable showcase of my skills and experience. Built with vanilla HTML, CSS, and JavaScript, it dynamically loads all content from a single JSON file.",
+            "link": "https://github.com/awara-coder/awara-coder.github.io"
+        }
+    ],
+    "experience": [
+        {
+            "title": "SDE - 2",
+            "company": "Rippling",
+            "period": "Aug 2024 - Ongoing",
+            "description": [
+                "Worked on US-GP Payroll migration and wrote facade gateway layer APIs for smooth migration.",
+                "Successfully took ownership of and completed the Germany Pensions project as Engineering DRI.",
+                "Architectured and implemented a suite of features for the Australia Super Annuation system, significantly reducing customer support tickets.",
+                "Spearheaded the creation of the first-ever set of audits for the Global Pensions platform."
+            ]
+        },
+        {
+            "title": "SDE - 2",
+            "company": "Allen Digital",
+            "period": "Jan 2024 - Aug 2024",
+            "description": [
+                "Designed, implemented, and took end-to-end ownership of major features such as Student insights, Teacher insights, and a Question correction platform used by over 200K users.",
+                "Mentored SDE-1s and interns with product tasks."
+            ]
+        },
+        {
+            "title": "SDE-1, SDE - 2",
+            "company": "ShareChat",
+            "period": "Jan 2021 - Dec 2023",
+            "description": [
+                "Worked on various cost optimization avenues, including migrating tables from Cloud Spanner to Scylla DB.",
+                "Wrote the user profile service from scratch in Golang and maintained it.",
+                "Took ownership of various critical back-end services like follow-service, comment-service, and user-profile-service.",
+                "Contributed to the design and implementation of user-facing features with over 3K requests per second in traffic."
+            ]
+        }
+    ],
+    "accomplishments": [
+        "Competitive Programming, Candidate Master (1958 rating) at CodeForces.",
+        "Redis, Inc | RU301: Running Redis at Scale, Redis Labs, Completed Running Redis at Scale course.",
+        "ACM ICPC International Collegiate Programming Contest, Kanpur, Secured 52 rank in Asia Kanpur ICPC Regional.",
+        "HackWithInfy, Infosys, Runner up in hackathon conducted at Infosys Pune. Also among top 109 students to qualify for the final round out of 100000+ participants."
+    ],
+    "contact": {
+        "email": "sagar.june97p@gmail.com",
+        "github": "https://github.com/awara-coder",
+        "linkedin": "https://www.linkedin.com/in/gupta-sagar/"
+    }
+}
