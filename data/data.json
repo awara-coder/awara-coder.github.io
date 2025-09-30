@@ -1,7 +1,7 @@
 {
     "name": "Sagar Gupta",
     "bio": "Software Development Engineer | LLM Tamer | Vibe code cleaner",
-    "about": "I am a passionate Software Development Engineer with experience in building scalable and efficient backend systems. I have a strong background in cloud technologies and a proven track record of delivering high-quality software. I once asked an LLM to write a joke about software development; it's still compiling.",
+    "about": "I am a passionate Software Development Engineer with experience in building scalable and efficient backend systems. I have a strong background in cloud technologies and a proven track record of delivering high-quality software. Human, not a large language model. I come with built-in features like genuine creativity and occasional bugs that can be patched with caffeine.",
     "skills": {
         "languages": [
             { "name": "Golang", "icon": "devicon-go-plain colored" },
