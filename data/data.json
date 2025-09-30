@@ -1,6 +1,6 @@
 {
     "name": "Sagar Gupta",
-    "bio": "Software Development Engineer | Golang, Python, JavaScript | Cloud & Backend Enthusiast",
+    "bio": "Software Development Engineer | LLM Tamer",
     "about": "I am a passionate Software Development Engineer with experience in building scalable and efficient backend systems. I have a strong background in cloud technologies and a proven track record of delivering high-quality software. I once asked an LLM to write a joke about software development; it's still compiling.",
     "skills": [
         {
@@ -17,7 +17,7 @@
         },
         {
             "name": "Cloud & Databases",
-            "description": "MongoDB, DynamoDB, SQL, Spanner, Scylla DB, BigQuery, Big Table, PubSub, Elasticsearch, AWS, GCP"
+            "description": "MongoDB, Temporal, DynamoDB, SQL, Spanner, Scylla DB, BigQuery, Big Table, PubSub, Elasticsearch, AWS, GCP"
         }
     ],
     "projects": [
