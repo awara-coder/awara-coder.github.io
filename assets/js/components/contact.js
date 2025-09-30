@@ -4,36 +4,49 @@
 
 export const populateContact = (contact) => {
     const contactContainer = document.getElementById('contact-container');
-    if (!contactContainer) return;
+    if (!contactContainer) {
+        console.error('Contact container not found');
+        return;
+    }
 
-    const contactHTML = `
-        <div class="contact-methods">
-            ${contact.email ? `
-                <p>
+    try {
+        console.log('Populating contact section with:', contact);
+        
+        let contactHTML = '<div class="contact-methods">';
+        
+        // Add email if available
+        if (contact.email) {
+            contactHTML += `
+                <p class="contact-item">
                     <i class="fas fa-envelope mr-2"></i>
                     <a href="mailto:${contact.email}">${contact.email}</a>
-                </p>
-            ` : ''}
-            ${contact.phone ? `
-                <p>
-                    <i class="fas fa-phone mr-2"></i>
-                    <a href="tel:${contact.phone}">${contact.phone}</a>
-                </p>
-            ` : ''}
-            ${contact.linkedin ? `
-                <p>
-                    <i class="fab fa-linkedin mr-2"></i>
-                    <a href="${contact.linkedin}" target="_blank">LinkedIn Profile</a>
-                </p>
-            ` : ''}
-            ${contact.github ? `
-                <p>
+                </p>`;
+        }
+        
+        // Add GitHub if available
+        if (contact.github) {
+            const githubUsername = contact.github.split('/').pop();
+            contactHTML += `
+                <p class="contact-item">
                     <i class="fab fa-github mr-2"></i>
-                    <a href="${contact.github}" target="_blank">GitHub Profile</a>
-                </p>
-            ` : ''}
-        </div>
-    `;
-
-    contactContainer.innerHTML = contactHTML;
+                    <a href="${contact.github}" target="_blank" rel="noopener noreferrer">${githubUsername}</a>
+                </p>`;
+        }
+        
+        // Add LinkedIn if available
+        if (contact.linkedin) {
+            contactHTML += `
+                <p class="contact-item">
+                    <i class="fab fa-linkedin mr-2"></i>
+                    <a href="${contact.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                </p>`;
+        }
+        
+        contactHTML += '</div>';
+        contactContainer.innerHTML = contactHTML;
+        
+    } catch (error) {
+        console.error('Error populating contact section:', error);
+        contactContainer.innerHTML = '<p>Unable to load contact information. Please check the console for details.</p>';
+    }
 };

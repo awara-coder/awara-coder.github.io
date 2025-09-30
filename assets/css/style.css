@@ -26,11 +26,90 @@ html {
     }
 }
 
+/* Section highlight effect - matches navbar color (#343a40) */
+@keyframes highlight {
+    0% { box-shadow: 0 0 0 0 rgba(52, 58, 64, 0); }
+    10% { box-shadow: 0 0 0 8px rgba(52, 58, 64, 0.3); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 58, 64, 0); }
+}
+
+/* Apply to all sections that can be navigated to */
+section[id] {
+    position: relative;
+    transition: all 0.3s ease-out;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eaeaea;
+}
+
+/* Add scroll-margin to account for fixed navbar */
+section[id] {
+    scroll-margin-top: 70px;
+}
+
+/* Add some spacing between sections */
+section + section {
+    margin-top: 2.5rem;
+}
+
+/* Style section headers */
+section h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Add some spacing around the main content */
+main.container {
+    padding: 2rem 1rem;
+}
+
+/* Hero section should not have a box */
 .hero-section {
     background-color: #f8f9fa;
-    padding: 100px 0;
+    padding: 6rem 0;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    text-align: center;
 }
 
 .project-card {
     margin-bottom: 30px;
+}
+
+/* Contact section styles */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item i {
+    width: 24px;
+    text-align: center;
+    color: #6c757d;
+    margin-right: 0.75rem;
+}
+
+.contact-item a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.contact-item a:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }

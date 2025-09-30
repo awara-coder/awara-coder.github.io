@@ -2,32 +2,69 @@
  * Main portfolio component that coordinates all other components
  */
 
-import { populateHero } from './hero';
-import { populateAbout } from './about';
-import { populateSkills } from './skills';
-import { populateProjects } from './projects';
-import { populateExperience } from './experience';
-import { populateAccomplishments } from './accomplishments';
-import { populateContact } from './contact';
+import { populateHero } from './hero.js';
+import { populateAbout } from './about.js';
+import { populateSkills } from './skills.js';
+import { populateProjects } from './projects.js';
+import { populateExperience } from './experience.js';
+import { populateAccomplishments } from './accomplishments.js';
+import { populateContact } from './contact.js';
 
 export const initializePortfolio = (data) => {
-    // Initialize all components with their respective data
-    populateHero(data.name, data.bio);
-    populateAbout(data.about);
-    populateSkills(data.skills);
-    populateProjects(data.projects);
-    populateExperience(data.experience);
-    populateAccomplishments(data.accomplishments);
-    populateContact(data.contact);
+    try {
+        console.log('Initializing portfolio with data:', data);
+        
+        // Check if data exists and has the required properties
+        if (!data) {
+            throw new Error('No data provided to initialize portfolio');
+        }
+        
+        // Initialize components with data if the data exists
+        if (data.name || data.bio) {
+            populateHero(data.name || '', data.bio || '');
+        }
+        
+        if (data.about) {
+            populateAbout(data.about);
+        }
+        
+        if (data.skills && Array.isArray(data.skills)) {
+            populateSkills(data.skills);
+        }
+        
+        if (data.projects && Array.isArray(data.projects)) {
+            populateProjects(data.projects);
+        }
+        
+        if (data.experience) {
+            populateExperience(data.experience);
+        }
+        
+        if (data.accomplishments) {
+            populateAccomplishments(data.accomplishments);
+        }
+        
+        if (data.contact) {
+            populateContact(data.contact);
+        }
+    } catch (error) {
+        console.error('Error initializing portfolio:', error);
+        throw error; // Re-throw to be caught by the caller
+    }
 };
 
 // Initialize the application
 export const initApp = async () => {
-    // Initialize smooth scrolling
-    const { initSmoothScroll } = await import('../utils/smoothScroll');
-    initSmoothScroll();
+    try {
+        // Initialize smooth scrolling
+        const { initSmoothScroll } = await import('../utils/smoothScroll.js');
+        initSmoothScroll();
 
-    // Load portfolio data
-    const { loadPortfolioData } = await import('../utils/dataLoader');
-    await loadPortfolioData();
+        // Load portfolio data
+        const { loadPortfolioData } = await import('../utils/dataLoader.js');
+        await loadPortfolioData();
+    } catch (error) {
+        console.error('Error in initApp:', error);
+        throw error; // Re-throw to be caught by the caller
+    }
 };
