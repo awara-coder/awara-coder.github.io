@@ -12,14 +12,14 @@ export const populateContact = (contact) => {
     try {
         console.log('Populating contact section with:', contact);
         
-        let contactHTML = '<div class="contact-methods">';
+        let contactHTML = '<div class="flex flex-col gap-4">'; // contact-methods
         
         // Add email if available
         if (contact.email) {
             contactHTML += `
-                <p class="contact-item">
-                    <i class="fas fa-envelope mr-2"></i>
-                    <a href="mailto:${contact.email}">${contact.email}</a>
+                <p class="flex items-center mb-2">
+                    <i class="fas fa-envelope w-6 text-center text-gray-600 mr-3"></i>
+                    <a href="mailto:${contact.email}" class="text-blue-600 no-underline transition-colors duration-200 hover:text-blue-800 hover:underline">${contact.email}</a>
                 </p>`;
         }
         
@@ -27,18 +27,18 @@ export const populateContact = (contact) => {
         if (contact.github) {
             const githubUsername = contact.github.split('/').pop();
             contactHTML += `
-                <p class="contact-item">
-                    <i class="fab fa-github mr-2"></i>
-                    <a href="${contact.github}" target="_blank" rel="noopener noreferrer">${githubUsername}</a>
+                <p class="flex items-center mb-2">
+                    <i class="fab fa-github w-6 text-center text-gray-600 mr-3"></i>
+                    <a href="${contact.github}" class="text-blue-600 no-underline transition-colors duration-200 hover:text-blue-800 hover:underline" target="_blank" rel="noopener noreferrer">${githubUsername}</a>
                 </p>`;
         }
         
         // Add LinkedIn if available
         if (contact.linkedin) {
             contactHTML += `
-                <p class="contact-item">
-                    <i class="fab fa-linkedin mr-2"></i>
-                    <a href="${contact.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                <p class="flex items-center mb-2">
+                    <i class="fab fa-linkedin w-6 text-center text-gray-600 mr-3"></i>
+                    <a href="${contact.linkedin}" class="text-blue-600 no-underline transition-colors duration-200 hover:text-blue-800 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
                 </p>`;
         }
         
