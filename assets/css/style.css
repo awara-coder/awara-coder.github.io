@@ -1,3 +1,18 @@
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+/* Add padding to the body to account for fixed navbar */
+body {
+    padding-top: 56px; /* Height of the navbar */
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
