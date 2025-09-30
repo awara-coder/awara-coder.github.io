@@ -2,24 +2,39 @@
     "name": "Sagar Gupta",
     "bio": "Software Development Engineer | LLM Tamer | Vibe code cleaner",
     "about": "I am a passionate Software Development Engineer with experience in building scalable and efficient backend systems. I have a strong background in cloud technologies and a proven track record of delivering high-quality software. I once asked an LLM to write a joke about software development; it's still compiling.",
-    "skills": [
-        {
-            "name": "Languages",
-            "description": "Golang, JavaScript, C/C++, Python"
-        },
-        {
-            "name": "Frameworks",
-            "description": "GRPC, Gin, Twirp, ExpressJS, Django"
-        },
-        {
-            "name": "Tools",
-            "description": "Git, Jenkins, Kibana, Prometheus, Gemini"
-        },
-        {
-            "name": "Cloud & Databases",
-            "description": "MongoDB, Temporal, DynamoDB, SQL, Spanner, Scylla DB, BigQuery, Big Table, PubSub, Elasticsearch, AWS, GCP"
-        }
-    ],
+    "skills": {
+        "languages": [
+            { "name": "Golang", "icon": "devicon-go-plain colored" },
+            { "name": "JavaScript", "icon": "devicon-javascript-plain colored" },
+            { "name": "C/C++", "icon": "devicon-cplusplus-plain colored" },
+            { "name": "Python", "icon": "devicon-python-plain colored" }
+        ],
+        "frameworks & libraries": [
+            { "name": "gRPC", "icon": "devicon-grpc-plain colored" },
+            { "name": "Gin", "icon": "devicon-go-plain colored" },
+            { "name": "ExpressJS", "icon": "devicon-express-original colored" },
+            { "name": "Django", "icon": "devicon-django-plain colored" },
+            { "name": "React", "icon": "devicon-react-original colored" },
+            { "name": "Node.js", "icon": "devicon-nodejs-plain colored" }
+        ],
+        "tools & platforms": [
+            { "name": "Git", "icon": "devicon-git-plain colored" },
+            { "name": "Docker", "icon": "devicon-docker-plain colored" },
+            { "name": "Kubernetes", "icon": "devicon-kubernetes-plain colored" },
+            { "name": "Jenkins", "icon": "devicon-jenkins-line colored" },
+            { "name": "Kibana", "icon": "devicon-kibana-plain colored" },
+            { "name": "Prometheus", "icon": "devicon-prometheus-original colored" },
+            { "name": "Temporal", "icon": "fas fa-code-branch" }
+        ],
+        "databases": [
+            { "name": "MongoDB", "icon": "devicon-mongodb-plain colored" },
+            { "name": "DynamoDB", "icon": "devicon-amazonwebservices-plain-wordmark colored" },
+            { "name": "PostgreSQL", "icon": "devicon-postgresql-plain colored" },
+            { "name": "MySQL", "icon": "devicon-mysql-plain colored" },
+            { "name": "Redis", "icon": "devicon-redis-plain colored" },
+            { "name": "Elasticsearch", "icon": "devicon-elasticsearch-plain colored" }
+        ]
+    },
     "projects": [
         {
             "title": "Personal Portfolio Website",

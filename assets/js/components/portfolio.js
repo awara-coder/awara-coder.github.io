@@ -28,8 +28,10 @@ export const initializePortfolio = (data) => {
             populateAbout(data.about);
         }
         
-        if (data.skills && Array.isArray(data.skills)) {
+        if (data.skills && (Array.isArray(data.skills) || typeof data.skills === 'object')) {
             populateSkills(data.skills);
+        } else {
+            console.warn('Skills data is missing or in an unexpected format:', data.skills);
         }
         
         if (data.projects && Array.isArray(data.projects)) {
