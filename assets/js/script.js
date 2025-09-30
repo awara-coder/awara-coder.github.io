@@ -41,4 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
         errorDiv.textContent = 'Failed to initialize the application. Please check the console for details.';
         document.body.appendChild(errorDiv);
     });
+
+    // Navbar toggling functionality
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('#navbarNav');
+
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', () => {
+            navbarCollapse.classList.toggle('show');
+        });
+    }
 });

@@ -1,36 +1,128 @@
-/* Navbar styles */
+/* Material UI inspired Navbar styles */
 .navbar {
+    background-color: #3f51b5; /* Primary Material UI color */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
     z-index: 1030;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
 
-/* Add padding to the body to account for fixed navbar */
 body {
-    padding-top: 56px; /* Height of the navbar */
+    padding-top: 64px; /* Approximate height of Material UI AppBar */
 }
 
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 60px; /* Adjust based on your header height */
+.navbar-brand {
+    color: white;
+    font-weight: 500;
 }
 
-/* Smooth scroll for browsers that don't support scroll-behavior */
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-collapse {
+    display: none;
+    width: 100%;
+}
+
+.navbar-collapse.show {
+    display: block;
+}
+
+@media (min-width: 992px) { /* Equivalent to Bootstrap's lg breakpoint */
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        width: auto;
+    }
+
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
     }
 }
 
-/* Section highlight effect - matches navbar color (#343a40) */
+/* Material UI inspired Container and Grid */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+@media (min-width: 600px) {
+    .container {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
+@media (min-width: 960px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -16px;
+}
+
+.row > * {
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+/* Basic column styles (adjust as needed for specific layouts) */
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Hero section styles */
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 6rem 0;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    text-align: center;
+}
+
+/* Section highlight effect - matches navbar color (#3f51b5) */
 @keyframes highlight {
-    0% { box-shadow: 0 0 0 0 rgba(52, 58, 64, 0); }
-    10% { box-shadow: 0 0 0 8px rgba(52, 58, 64, 0.3); }
-    100% { box-shadow: 0 0 0 0 rgba(52, 58, 64, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(63, 81, 181, 0); }
+    10% { box-shadow: 0 0 0 8px rgba(63, 81, 181, 0.3); }
+    100% { box-shadow: 0 0 0 0 rgba(63, 81, 181, 0); }
 }
 
 /* Apply to all sections that can be navigated to */
@@ -66,21 +158,6 @@ section h2 {
 /* Add some spacing around the main content */
 main.container {
     padding: 2rem 1rem;
-}
-
-/* Hero section should not have a box */
-.hero-section {
-    background-color: #f8f9fa;
-    padding: 6rem 0;
-    margin-bottom: 2rem;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    text-align: center;
-}
-
-.project-card {
-    margin-bottom: 30px;
 }
 
 /* Skills section styles */
@@ -231,3 +308,4 @@ main.container {
     color: #0056b3;
     text-decoration: underline;
 }
+
