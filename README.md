@@ -62,6 +62,7 @@ awara-coder.github.io/
 │           ├── backToTop.js   # Smooth scroll to top logic
 │           ├── dataLoader.js  # Data loading and initialization
 │           ├── dom.js         # DOM manipulation helpers
+│           ├── mobileMenu.js  # Mobile menu toggle and close logic
 │           ├── smoothScroll.js# Smooth scrolling logic
 │           └── themeToggle.js # Dark/Light theme toggle logic
 ├── data/
@@ -94,6 +95,7 @@ All content is managed through the `data/data.json` file. Update the following s
 - [Google Fonts](https://fonts.google.com/) - Typography
 
 ## TODO:
+- Add slider wrapper for projects section.
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Add support for running tests before deployment in CI.

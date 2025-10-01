@@ -1,6 +1,7 @@
 import { initializePortfolio } from '../assets/js/components/portfolio.js';
 import { initThemeToggle, LOCAL_STORAGE_THEME_KEY, THEME_DARK, THEME_LIGHT } from '../assets/js/utils/themeToggle.js';
 import { loadPortfolioData } from '../assets/js/utils/dataLoader.js';
+import { initMobileMenu } from '../assets/js/utils/mobileMenu.js';
 
 const mockData = {
     "name": "John Doe",
@@ -269,4 +270,55 @@ QUnit.test('Loading screen hides even if data loading fails', async function(ass
         assert.ok(loadingScreen.classList.contains('hidden'), 'Loading screen is hidden after data load failure');
         done();
     }, 600);
+});
+
+QUnit.module('Mobile Menu Functionality', {
+    beforeEach: function() {
+        document.getElementById('qunit-fixture').innerHTML = `
+            <button id="mobile-menu-button"><i class="fas fa-bars"></i></button>
+            <div id="mobile-menu" class="hidden">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+            </div>
+            <div id="outside-element"></div>
+        `;
+        initMobileMenu();
+    }
+});
+
+QUnit.test('Mobile menu toggles visibility on button click', function(assert) {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    assert.ok(mobileMenu.classList.contains('hidden'), 'Menu is hidden initially');
+
+    mobileMenuButton.click();
+    assert.notOk(mobileMenu.classList.contains('hidden'), 'Menu is visible after first click');
+
+    mobileMenuButton.click();
+    assert.ok(mobileMenu.classList.contains('hidden'), 'Menu is hidden after second click');
+});
+
+QUnit.test('Mobile menu closes when clicking outside', function(assert) {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const outsideElement = document.getElementById('outside-element');
+
+    mobileMenuButton.click(); // Open the menu
+    assert.notOk(mobileMenu.classList.contains('hidden'), 'Menu is visible initially');
+
+    outsideElement.click(); // Click outside
+    assert.ok(mobileMenu.classList.contains('hidden'), 'Menu is hidden after clicking outside');
+});
+
+QUnit.test('Mobile menu closes when a navigation link is clicked', function(assert) {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLink = mobileMenu.querySelector('a');
+
+    mobileMenuButton.click(); // Open the menu
+    assert.notOk(mobileMenu.classList.contains('hidden'), 'Menu is visible initially');
+
+    navLink.click(); // Click a navigation link
+    assert.ok(mobileMenu.classList.contains('hidden'), 'Menu is hidden after clicking a navigation link');
 });

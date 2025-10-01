@@ -5,6 +5,7 @@
 import { initApp } from './components/portfolio.js';
 import { initBackToTopButton } from './utils/backToTop.js';
 import { initThemeToggle } from './utils/themeToggle.js';
+import { initMobileMenu } from './utils/mobileMenu.js';
 
 // Add global error handler for unhandled promise rejections
 window.addEventListener('unhandledrejection', (event) => {
@@ -49,13 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme toggle
     initThemeToggle();
 
-    // Navbar toggling functionality
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('#navbarNav');
-
-    if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', () => {
-            navbarCollapse.classList.toggle('show');
-        });
-    }
+    // Initialize mobile menu
+    initMobileMenu();
 });
