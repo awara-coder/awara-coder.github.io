@@ -90,6 +90,14 @@ All content is managed through the `data/data.json` file. Update the following s
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Google Fonts](https://fonts.google.com/) - Typography
 
+## TODO:
+- Add the data.json more extensible.
+- Add support to release from a new branch and faster loading via minimization and bundling.
+- Add loading section before content is loaded by javascript.
+- Add support for dark mode.
+- Add tests to ensure nothing breaks when introducing new content, styling changes.
+
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).

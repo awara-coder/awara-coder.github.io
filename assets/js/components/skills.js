@@ -24,7 +24,7 @@ export const populateSkills = (skills) => {
                 categoryEl.className = 'flex-none w-full sm:w-1/2 lg:w-1/3 max-w-xs min-w-64 bg-white rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out border border-gray-200 flex flex-col hover:translate-y-[-5px] hover:shadow-lg hover:border-gray-300'; // skill-category
                 
                 const titleEl = document.createElement('h4');
-                titleEl.className = 'text-gray-800 mb-5 font-semibold text-lg pb-3 border-b-2 border-gray-200 relative'; // skill-category-title
+                titleEl.className = 'text-gray-800 mb-5 font-semibold text-lg pb-2 border-b border-gray-200 relative'; // skill-category-title
                 titleEl.textContent = category.name;
                 
                 const skillsList = document.createElement('div');
