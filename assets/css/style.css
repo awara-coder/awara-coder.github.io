@@ -457,3 +457,26 @@ a:hover {
     border: 1px solid var(--divider);
     background-color: var(--surface);
 }
+
+/* Theme Toggle Smooth Transitions */
+#theme-toggle {
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+#theme-toggle-icon {
+    transition: all 0.3s ease;
+}
+
+/* Smooth theme transition for all elements */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Disable transitions during initial load to prevent flash */
+.no-transition * {
+    transition: none !important;
+}
