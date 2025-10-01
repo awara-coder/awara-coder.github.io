@@ -10,6 +10,7 @@ A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and
 - **Smooth Scrolling** - Enhanced user experience with smooth navigation
 - **Fixed Navigation** - Always accessible menu
 - **Modern UI** - Clean and professional design
+- **Loading Screen** - Enhances user experience during data fetching
 
 ## Quick Start
 
@@ -58,9 +59,11 @@ awara-coder.github.io/
 │       │   ├── projects.js
 │       │   └── skills.js
 │       └── utils/             # Utility functions
+│           ├── backToTop.js   # Smooth scroll to top logic
 │           ├── dataLoader.js  # Data loading and initialization
 │           ├── dom.js         # DOM manipulation helpers
-│           └── smoothScroll.js# Smooth scrolling logic
+│           ├── smoothScroll.js# Smooth scrolling logic
+│           └── themeToggle.js # Dark/Light theme toggle logic
 ├── data/
 │   └── data.json             # All website content
 ├── index.html                # Main HTML file
@@ -86,16 +89,14 @@ All content is managed through the `data/data.json` file. Update the following s
 
 ## Dependencies
 
-- [Bootstrap 4.5](https://getbootstrap.com/) - CSS Framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Google Fonts](https://fonts.google.com/) - Typography
 
 ## TODO:
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
-- Add loading section before content is loaded by javascript.
 - Add support for running tests before deployment in CI.
-- Add tests to ensure nothing breaks when introducing new content, styling changes.
 
 
 ## License
