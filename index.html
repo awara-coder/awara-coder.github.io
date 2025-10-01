@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -82,13 +83,13 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="assets/js/script.js" as="script">
 </head>
-<body class="antialiased bg-gray-50 text-gray-800">
+<body class="antialiased bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
     <!-- Navigation -->
-    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100 shadow-sm dark:bg-gray-800/80 dark:border-gray-700 dark:shadow-lg">
         <div class="container mx-auto px-4 lg:px-6">
             <nav class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="#" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors flex items-center">
+                <a href="#" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors dark:text-white flex items-center">
                     <span class="bg-primary-600 text-white p-1.5 rounded mr-2">
                         <i class="fas fa-code text-sm"></i>
                     </span>
@@ -97,28 +98,31 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="#about" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                    <a href="#about" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-300">
                         About
                     </a>
-                    <a href="#skills" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                    <a href="#skills" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-300">
                         Skills
                     </a>
-                    <a href="#experience" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                    <a href="#experience" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-300">
                         Experience
                     </a>
-                    <a href="#projects" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                    <a href="#projects" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-300">
                         Projects
                     </a>
-                    <a href="#accomplishments" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                    <a href="#accomplishments" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-300">
                         Accomplishments
                     </a>
-                    <a href="#contact" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                    <a href="#contact" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-300">
                         Contact Me
                     </a>
+                    <button id="theme-toggle" type="button" class="p-2 rounded-md text-gray-700 hover:text-primary-600 focus:outline-none dark:text-gray-300">
+                        <i id="theme-toggle-icon" class="fas fa-sun text-xl"></i>
+                    </button>
                 </div>
                 
                 <!-- Mobile menu button -->
-                <button class="md:hidden p-2 rounded-md text-gray-700 hover:text-primary-600 focus:outline-none" id="mobile-menu-button">
+                <button class="md:hidden p-2 rounded-md text-gray-700 hover:text-primary-600 focus:outline-none dark:text-gray-300" id="mobile-menu-button">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </nav>
@@ -126,22 +130,22 @@
             <!-- Mobile menu -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700">
                         About
                     </a>
-                    <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">
+                    <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700">
                         Skills
                     </a>
-                    <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">
+                    <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700">
                         Experience
                     </a>
-                    <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">
+                    <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700">
                         Projects
                     </a>
-                    <a href="#accomplishments" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">
+                    <a href="#accomplishments" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700">
                         Accomplishments
                     </a>
-                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50">
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700">
                         Contact Me
                     </a>
                 </div>
@@ -157,12 +161,10 @@
         
         <div class="container mx-auto px-4 lg:px-6">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                    Hi, I'm <span class="text-primary-600" id="user-name">Me</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight dark:text-white">
+                    Hi, I'm <span class="text-primary-600" id="user-name">[Your Name]</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto" id="user-bio">
-                    [Your professional tagline or short introduction]
-                </p>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto dark:text-gray-300">
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="#projects" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 hover:text-white">
                         View My Work
@@ -180,13 +182,13 @@
     <!-- Main Content -->
     <main class="relative z-10">
         <!-- About Section -->
-        <section id="about" class="py-16 md:py-24 bg-white">
+        <section id="about" class="py-16 md:py-24 bg-white dark:bg-gray-800">
             <div class="container mx-auto px-4 lg:px-6">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit dark:text-white">
                         About Me
                     </h2>
-                    <div class="text-gray-600 max-w-none text-left" id="user-about">
+                    <div class="text-gray-600 max-w-none text-left dark:text-gray-300" id="user-about">
                         <!-- Content will be loaded by JavaScript -->
                     </div>
                 </div>
@@ -194,9 +196,9 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-16 md:py-24 bg-gray-50">
+        <section id="skills" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
             <div class="container mx-auto px-4 lg:px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit dark:text-white">
                     My Skills
                 </h2>
                 <div id="skills-container" class="mx-auto">
@@ -206,9 +208,9 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-16 md:py-24 bg-white">
+        <section id="experience" class="py-16 md:py-24 bg-white dark:bg-gray-800">
             <div class="container mx-auto px-4 lg:px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit dark:text-white">
                     Work Experience
                 </h2>
                 <div id="experience-container" class="max-w-4xl mx-auto">
@@ -218,7 +220,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-16 md:py-24 bg-gray-50">
+        <section id="projects" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
             <div class="container mx-auto px-4 lg:px-6">
                 <div id="projects-container">
                     <!-- Projects will be loaded by JavaScript -->
@@ -228,7 +230,7 @@
 
   
         <!-- Accomplishments Section -->
-        <section id="accomplishments" class="py-16 md:py-24 bg-white">
+        <section id="accomplishments" class="py-16 md:py-24 bg-white dark:bg-gray-800">
             <div class="container mx-auto px-4 lg:px-6">
                 <div id="accomplishments-container">
                     <!-- Accomplishments will be loaded by JavaScript -->
@@ -237,16 +239,16 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <section id="contact" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
             <div class="container mx-auto px-4 lg:px-6">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit dark:text-white">
                         Get In Touch
                     </h2>
-                    <div id="contact-container" class="bg-white rounded-xl shadow-lg p-8 md:p-10">
+                    <div id="contact-container" class="bg-white rounded-xl shadow-lg p-8 md:p-10 dark:bg-gray-800">
                         <!-- Contact form will be loaded by JavaScript -->
                         <div class="text-center py-10">
-                            <p class="text-lg text-gray-600 mb-6">
+                            <p class="text-lg text-gray-600 mb-6 dark:text-gray-300">
                                 Have a project in mind or want to discuss potential opportunities?
                             </p>
                             <a href="mailto:your.email@example.com" class="btn btn-primary inline-flex items-center">
@@ -261,7 +263,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12 dark:bg-gray-950">
         <div class="container mx-auto px-4 lg:px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
@@ -271,7 +273,7 @@
                         </span>
                         Portfolio
                     </a>
-                    <p class="mt-2 text-gray-400 text-sm">
+                    <p class="mt-2 text-gray-400 text-sm dark:text-gray-500">
                         &copy; <span id="current-year"></span> All rights reserved.
                     </p>
                 </div>
@@ -280,7 +282,7 @@
     </footer>
 
     <!-- Back to top button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-700 focus:outline-none z-50" aria-label="Back to top">
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-700 focus:outline-none z-50 dark:shadow-xl" aria-label="Back to top">
         Back to top<i class="fa-solid fa-arrow-up ml-2"></i>
     </button>
 

@@ -9,8 +9,8 @@ export const populateProjects = (projects) => {
     // Add section header
     const sectionHeader = `
         <div class="section-header fade-in-up" style="animation-delay: 0.1s">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Here are some of my recent projects. Each one was built to solve a specific problem or explore new technologies.</p>
+            <h2 class="section-title dark:text-white">Projects</h2>
+            <p class="section-subtitle dark:text-gray-300">Here are some of my recent projects. Each one was built to solve a specific problem or explore new technologies.</p>
         </div>
     `;
 
@@ -21,7 +21,7 @@ export const populateProjects = (projects) => {
         
         return `
             <div class="fade-in-up" style="animation-delay: ${delay}s">
-                <div class="card h-full">
+                <div class="card h-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500">
                     ${project.image ? `
                         <img 
                             src="${project.image}" 
@@ -32,12 +32,12 @@ export const populateProjects = (projects) => {
                     ` : ''}
                     <div class="card-content">
                         <div class="flex-grow">
-                            <h3 class="card-title">${project.title}</h3>
-                            <p class="card-description">${project.description}</p>
+                            <h3 class="card-title dark:text-white">${project.title}</h3>
+                            <p class="card-description dark:text-gray-300">${project.description}</p>
                             ${project.technologies && project.technologies.length ? `
                                 <div class="flex flex-wrap mt-4">
                                     ${project.technologies.map(tech => `
-                                        <span class="tag">${tech}</span>
+                                        <span class="tag bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100">${tech}</span>
                                     `).join('')}
                                 </div>
                             ` : ''}
@@ -59,7 +59,7 @@ export const populateProjects = (projects) => {
                                 ${project.github ? `
                                     <a 
                                         href="${project.github}" 
-                                        class="btn btn-outline btn-sm"
+                                        class="btn btn-outline btn-sm border-gray-300 text-gray-700 bg-white hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label="View source code for ${project.title}"

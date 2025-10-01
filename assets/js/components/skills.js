@@ -18,13 +18,10 @@ export const populateSkills = (skills) => {
         if (Array.isArray(skills)) {
             // Handle array format (categories with descriptions)
             skills.forEach(category => {
-                if (!category || !category.name) return;
-                
-                const categoryEl = document.createElement('div');
-                categoryEl.className = 'flex-none w-full sm:w-1/2 lg:w-1/4 max-w-xs min-w-64 bg-white rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out border border-gray-200 flex flex-col hover:translate-y-[-5px] hover:shadow-lg hover:border-gray-300'; // skill-category
+                categoryEl.className = 'flex-none w-full sm:w-1/2 lg:w-1/4 max-w-xs min-w-64 bg-white rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out border border-gray-200 flex flex-col hover:translate-y-[-5px] hover:shadow-lg hover:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500'; // skill-category
                 
                 const titleEl = document.createElement('h4');
-                titleEl.className = 'text-gray-800 mb-5 font-semibold text-lg pb-2 border-b border-gray-200 relative'; // skill-category-title
+                titleEl.className = 'text-gray-800 mb-5 font-semibold text-lg pb-2 border-b border-gray-200 relative dark:text-white dark:border-gray-600'; // skill-category-title
                 titleEl.textContent = category.name;
                 
                 const skillsList = document.createElement('div');
@@ -34,7 +31,7 @@ export const populateSkills = (skills) => {
                 if (category.description) {
                     const skillItems = category.description.split(',').map(skill => {
                         const skillEl = document.createElement('div');
-                        skillEl.className = 'flex items-center p-2 text-gray-700 text-base rounded-md transition-all duration-200 ease-in-out bg-gray-50 my-0.5 hover:bg-gray-100 hover:text-gray-900 hover:translate-x-1'; // skill-item
+                        skillEl.className = 'flex items-center p-2 text-gray-700 text-base rounded-md transition-all duration-200 ease-in-out bg-gray-50 my-0.5 hover:bg-gray-100 hover:text-gray-900 hover:translate-x-1 dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500 dark:hover:text-white'; // skill-item
                         skillEl.textContent = skill.trim();
                         return skillEl;
                     });
@@ -51,10 +48,10 @@ export const populateSkills = (skills) => {
                 if (!Array.isArray(items)) return;
                 
                 const categoryEl = document.createElement('div');
-                categoryEl.className = 'flex-none w-full sm:w-1/2 lg:w-1/4 max-w-xs min-w-64 bg-white rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out border border-gray-200 flex flex-col hover:translate-y-[-5px] hover:shadow-lg hover:border-gray-300'; // skill-category
+                categoryEl.className = 'flex-none w-full sm:w-1/2 lg:w-1/4 max-w-xs min-w-64 bg-white rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out border border-gray-200 flex flex-col hover:translate-y-[-5px] hover:shadow-lg hover:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500'; // skill-category
                 
                 const titleEl = document.createElement('h4');
-                titleEl.className = 'text-gray-800 mb-5 font-semibold text-lg pb-3 border-b-2 border-gray-200 relative'; // skill-category-title
+                titleEl.className = 'text-gray-800 mb-5 font-semibold text-lg pb-3 border-b-2 border-gray-200 relative dark:text-white dark:border-gray-600'; // skill-category-title
                 titleEl.textContent = category.charAt(0).toUpperCase() + category.slice(1);
                 
                 const skillsList = document.createElement('div');
@@ -63,7 +60,7 @@ export const populateSkills = (skills) => {
                 // Create skill items from the items array
                 const skillItems = items.map(item => {
                     const skillEl = document.createElement('div');
-                    skillEl.className = 'flex items-center p-2 text-gray-700 text-base rounded-md transition-all duration-200 ease-in-out bg-gray-50 my-0.5 hover:bg-gray-100 hover:text-gray-900 hover:translate-x-1'; // skill-item
+                    skillEl.className = 'flex items-center p-2 text-gray-700 text-base rounded-md transition-all duration-200 ease-in-out bg-gray-50 my-0.5 hover:bg-gray-100 hover:text-gray-900 hover:translate-x-1 dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500 dark:hover:text-white'; // skill-item
                     
                     // Create icon element if available
                     if (item.icon) {

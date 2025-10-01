@@ -4,11 +4,34 @@
   --primary-light: #3b82f6; /* Blue-500 */
   --primary-dark: #1d4ed8;  /* Blue-700 */
   --secondary: #ec4899;     /* Pink-500 */
-  --background: #f8fafc;    /* Slate-50 */
-  --surface: #ffffff;       /* White */
-  --text-primary: #1e293b;  /* Slate-800 */
-  --text-secondary: #64748b;/* Slate-500 */
-  --divider: #e2e8f0;      /* Slate-200 */
+
+  /* Light Theme Colors */
+  --background-light: #f8fafc;    /* Slate-50 */
+  --surface-light: #ffffff;       /* White */
+  --text-primary-light: #1e293b;  /* Slate-800 */
+  --text-secondary-light: #64748b;/* Slate-500 */
+  --divider-light: #e2e8f0;      /* Slate-200 */
+  --tag-bg-light: #e0f2fe;       /* Blue-100 */
+  --tag-text-light: #0369a1;      /* Cyan-800 */
+
+  /* Dark Theme Colors */
+  --background-dark: #1a202c;    /* Gray-900 */
+  --surface-dark: #2d3748;       /* Gray-800 */
+  --text-primary-dark: #f7fafc;  /* Gray-100 */
+  --text-secondary-dark: #a0aec0;/* Gray-400 */
+  --divider-dark: #4a5568;      /* Gray-700 */
+  --tag-bg-dark: #2a4365;        /* Blue-800 */
+  --tag-text-dark: #e0f2fe;      /* Blue-100 */
+  
+  /* Defaulting to light theme variables */
+  --background: var(--background-light);
+  --surface: var(--surface-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --divider: var(--divider-light);
+  --tag-bg: var(--tag-bg-light);
+  --tag-text: var(--tag-text-light);
+
   --success: #10b981;      /* Emerald-500 */
   --warning: #f59e0b;      /* Amber-500 */
   --error: #ef4444;        /* Red-500 */
@@ -20,6 +43,17 @@
   
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --radius: 0.5rem;
+}
+
+/* Dark mode specific variables */
+html.dark {
+  --background: var(--background-dark);
+  --surface: var(--surface-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --divider: var(--divider-dark);
+  --tag-bg: var(--tag-bg-dark);
+  --tag-text: var(--tag-text-dark);
 }
 
 /* Base Styles */
@@ -238,8 +272,8 @@ section {
 /* Tags */
 .tag {
   display: inline-block;
-  background-color: #e0f2fe;
-  color: #0369a1;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
   font-size: 0.75rem;
   font-weight: 500;
   padding: 0.25rem 0.5rem;

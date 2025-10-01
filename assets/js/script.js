@@ -2,9 +2,9 @@
  * Main entry point for the portfolio application
  */
 
-// Import the initialization function from the portfolio component
 import { initApp } from './components/portfolio.js';
 import { initBackToTopButton } from './utils/backToTop.js';
+import { initThemeToggle } from './utils/themeToggle.js';
 
 // Add global error handler for unhandled promise rejections
 window.addEventListener('unhandledrejection', (event) => {
@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize back to top button
     initBackToTopButton();
+
+    // Initialize theme toggle
+    initThemeToggle();
 
     // Navbar toggling functionality
     const navbarToggler = document.querySelector('.navbar-toggler');
