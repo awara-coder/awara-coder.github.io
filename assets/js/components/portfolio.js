@@ -58,13 +58,15 @@ export const initializePortfolio = (data) => {
 // Initialize the application
 export const initApp = async () => {
     try {
+        // Load portfolio data
+        const { loadPortfolioData } = await import('../utils/dataLoader.js');
+        await loadPortfolioData();
+        
         // Initialize smooth scrolling
         const { initSmoothScroll } = await import('../utils/smoothScroll.js');
         initSmoothScroll();
 
-        // Load portfolio data
-        const { loadPortfolioData } = await import('../utils/dataLoader.js');
-        await loadPortfolioData();
+      
     } catch (error) {
         console.error('Error in initApp:', error);
         throw error; // Re-throw to be caught by the caller
