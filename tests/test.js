@@ -1,5 +1,6 @@
 import { initializePortfolio } from '../assets/js/components/portfolio.js';
 import { initThemeToggle, LOCAL_STORAGE_THEME_KEY, THEME_DARK, THEME_LIGHT } from '../assets/js/utils/themeToggle.js';
+import { loadPortfolioData } from '../assets/js/utils/dataLoader.js';
 
 const mockData = {
     "name": "John Doe",
@@ -177,4 +178,95 @@ QUnit.test('Dark mode toggle functionality', function(assert) {
     });
     initThemeToggle(); // Re-initialize to pick up system preference
     assert.ok(htmlElement.classList.contains(THEME_DARK), 'HTML element has dark class when system prefers dark');
+});
+
+QUnit.module('Loading Screen Functionality', {
+    beforeEach: function() {
+        // Add loading screen to the DOM for testing
+        document.getElementById('qunit-fixture').innerHTML = `
+            <div id="loading-screen" class="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-900 z-[9999] transition-opacity duration-500 ease-out opacity-100 visible">
+                <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary-600"></div>
+            </div>
+            <div id="user-name"></div>
+            <div id="user-about"></div>
+            <div id="skills-container"></div>
+            <div id="projects-container"></div>
+            <div id="experience-container"></div>
+            <div id="accomplishments-container"></div>
+            <div id="contact-container"></div>
+        `;
+        // Mock fetch to control data loading
+        this.originalFetch = window.fetch;
+        window.fetch = (url) => {
+            if (url === '/data/data.json') {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve({
+                            ok: true,
+                            json: () => Promise.resolve(mockData),
+                            text: () => Promise.resolve(JSON.stringify(mockData))
+                        });
+                    }, 100); // Simulate network delay
+                });
+            }
+            return this.originalFetch(url);
+        };
+    },
+    afterEach: function() {
+        // Restore original fetch
+        window.fetch = this.originalFetch;
+    }
+});
+
+QUnit.test('Loading screen is visible initially and hides after data load', async function(assert) {
+    const done = assert.async();
+    const loadingScreen = document.getElementById('loading-screen');
+
+    // Initially, loading screen should be visible
+    assert.ok(loadingScreen, 'Loading screen element exists');
+    assert.notOk(loadingScreen.classList.contains('hidden'), 'Loading screen is not hidden initially');
+    assert.ok(loadingScreen.classList.contains('visible'), 'Loading screen is visible initially');
+
+    await loadPortfolioData();
+
+    // After data loads, loading screen should be hidden
+    // We need a small delay to allow for the CSS transition to complete
+    setTimeout(() => {
+        assert.ok(loadingScreen.classList.contains('hidden'), 'Loading screen is hidden after data load');
+        assert.notOk(loadingScreen.classList.contains('visible'), 'Loading screen is not visible after data load');
+        done();
+    }, 600); // Slightly longer than the CSS transition duration (500ms)
+});
+
+QUnit.test('Loading screen hides even if data loading fails', async function(assert) {
+    const done = assert.async();
+    const loadingScreen = document.getElementById('loading-screen');
+
+    // Mock fetch to simulate an error
+    window.fetch = (url) => {
+        if (url === '/data/data.json') {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve({
+                        ok: false,
+                        status: 500,
+                        text: () => Promise.resolve('Internal Server Error')
+                    });
+                }, 100);
+            });
+        }
+        return this.originalFetch(url);
+    };
+
+    // Initially, loading screen should be visible
+    assert.ok(loadingScreen, 'Loading screen element exists');
+    assert.notOk(loadingScreen.classList.contains('hidden'), 'Loading screen is not hidden initially');
+
+    await loadPortfolioData();
+
+    // After data load failure, loading screen should be hidden
+    setTimeout(() => {
+        assert.ok(loadingScreen.classList.contains('hidden'), 'Loading screen is hidden after data load failure');
+        done();
+    }, 600);
 });

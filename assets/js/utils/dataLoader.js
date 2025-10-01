@@ -5,6 +5,7 @@
 import { initializePortfolio } from '../components/portfolio.js';
 
 export const loadPortfolioData = async () => {
+    const loadingScreen = document.getElementById('loading-screen');
     try {
         console.log('Fetching portfolio data...');
         const response = await fetch('/data/data.json');
@@ -49,5 +50,14 @@ export const loadPortfolioData = async () => {
         errorDiv.style.zIndex = '9999';
         errorDiv.textContent = `Failed to load portfolio data: ${error.message}`;
         document.body.appendChild(errorDiv);
+    } finally {
+        // Hide loading screen after data is loaded or if an error occurs
+        if (loadingScreen) {
+            loadingScreen.classList.add('hidden');
+            // Optional: Remove the element from DOM after transition if needed
+            loadingScreen.addEventListener('transitionend', () => {
+                loadingScreen.remove();
+            }, { once: true });
+        }
     }
 };

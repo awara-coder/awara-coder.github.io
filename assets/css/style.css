@@ -441,3 +441,9 @@ a:hover {
     padding-right: 1rem;
   }
 }
+
+/* Loading Screen */
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
