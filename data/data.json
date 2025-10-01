@@ -39,7 +39,8 @@
         {
             "title": "Personal Portfolio Website",
             "description": "This website itself, designed to be a clean, responsive, and easily updatable showcase of my skills and experience. Built with vanilla HTML, CSS, and JavaScript, it dynamically loads all content from a single JSON file.",
-            "link": "https://github.com/awara-coder/awara-coder.github.io"
+            "link": "https://awara-coder.github.io",
+            "github": "https://github.com/awara-coder/awara-coder.github.io"
         }
     ],
     "experience": [

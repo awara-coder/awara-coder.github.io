@@ -4,6 +4,7 @@
 
 // Import the initialization function from the portfolio component
 import { initApp } from './components/portfolio.js';
+import { initBackToTopButton } from './utils/backToTop.js';
 
 // Add global error handler for unhandled promise rejections
 window.addEventListener('unhandledrejection', (event) => {
@@ -41,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         errorDiv.textContent = 'Failed to initialize the application. Please check the console for details.';
         document.body.appendChild(errorDiv);
     });
+
+    // Initialize back to top button
+    initBackToTopButton();
 
     // Navbar toggling functionality
     const navbarToggler = document.querySelector('.navbar-toggler');

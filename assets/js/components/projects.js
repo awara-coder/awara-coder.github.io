@@ -42,8 +42,9 @@ export const populateProjects = (projects) => {
                                 </div>
                             ` : ''}
                         </div>
-                        ${project.link ? `
+                        ${(project.link || project.github) ? `
                             <div class="card-footer">
+                                ${project.link ? `
                                 <a 
                                     href="${project.link}" 
                                     class="btn btn-primary" 
@@ -52,8 +53,9 @@ export const populateProjects = (projects) => {
                                     aria-label="View ${project.title}"
                                 >
                                     View Project
-                                    <i class="material-icons ml-1" style="font-size: 1.1rem;">arrow_outward</i>
+                                    <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
                                 </a>
+                                ` : ''}
                                 ${project.github ? `
                                     <a 
                                         href="${project.github}" 
@@ -62,7 +64,7 @@ export const populateProjects = (projects) => {
                                         rel="noopener noreferrer"
                                         aria-label="View source code for ${project.title}"
                                     >
-                                        <i class="fab fa-github mr-1"></i>
+                                        <i class="fab fa-github mr-2"></i>
                                         Code
                                     </a>
                                 ` : ''}

@@ -178,7 +178,7 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 pb-4 border-b border-primary-600 mx-auto w-fit">
                         About Me
                     </h2>
-                    <div class="prose prose-lg text-gray-600 max-w-none" id="user-about">
+                    <div class="text-gray-600 max-w-none text-left" id="user-about">
                         <!-- Content will be loaded by JavaScript -->
                     </div>
                 </div>
@@ -257,24 +257,13 @@
                         &copy; <span id="current-year"></span> All rights reserved.
                     </p>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to top button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-700 focus:outline-none" aria-label="Back to top">
-        <i class="material-icons-round">arrow_upward</i>
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-700 focus:outline-none z-50" aria-label="Back to top">
+        Back to top<i class="fa-solid fa-arrow-up ml-2"></i>
     </button>
 
     <!-- Scripts -->
@@ -292,23 +281,6 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
-        
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
     </script>
 </body>
 </html>
