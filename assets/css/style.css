@@ -447,3 +447,13 @@ a:hover {
     opacity: 0;
     visibility: hidden;
 }
+
+/* Company Logo in Experience Section */
+.company-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--divider);
+    background-color: var(--surface);
+}

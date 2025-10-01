@@ -2,6 +2,7 @@ import { initializePortfolio } from '../assets/js/components/portfolio.js';
 import { initThemeToggle, LOCAL_STORAGE_THEME_KEY, THEME_DARK, THEME_LIGHT } from '../assets/js/utils/themeToggle.js';
 import { loadPortfolioData } from '../assets/js/utils/dataLoader.js';
 import { initMobileMenu } from '../assets/js/utils/mobileMenu.js';
+import { populateExperience } from '../assets/js/components/experience.js';
 
 const mockData = {
     "name": "John Doe",
@@ -321,4 +322,73 @@ QUnit.test('Mobile menu closes when a navigation link is clicked', function(asse
 
     navLink.click(); // Click a navigation link
     assert.ok(mobileMenu.classList.contains('hidden'), 'Menu is hidden after clicking a navigation link');
+});
+
+QUnit.module('Experience Section Logo Functionality', {
+    beforeEach: function() {
+        document.getElementById('qunit-fixture').innerHTML = `
+            <div id="experience-container"></div>
+        `;
+    }
+});
+
+QUnit.test('Company logo renders correctly when logoUrl is provided', function(assert) {
+    const experienceData = [
+        {
+            title: "SDE",
+            company: "Test Company",
+            logoUrl: "assets/images/logos/test-logo.png",
+            period: "Jan 2020 - Dec 2020",
+            description: ["Developed software."]
+        }
+    ];
+    populateExperience(experienceData);
+
+    const logoImg = document.querySelector('#experience-container .company-logo');
+    assert.ok(logoImg, 'Image element for logo exists');
+    assert.equal(logoImg.src, 'http://localhost:8000/assets/images/logos/test-logo.png', 'Logo image src is correct');
+    assert.equal(logoImg.alt, 'Test Company Logo', 'Logo image alt text is correct');
+});
+
+QUnit.test('Default suitcase icon renders when logoUrl is missing', function(assert) {
+    const experienceData = [
+        {
+            title: "SDE",
+            company: "Another Company",
+            period: "Jan 2021 - Dec 2021",
+            description: ["Managed projects."]
+        }
+    ];
+    populateExperience(experienceData);
+
+    const suitcaseIcon = document.querySelector('#experience-container .fa-suitcase');
+    assert.ok(suitcaseIcon, 'Default suitcase icon exists');
+    assert.notOk(document.querySelector('#experience-container .company-logo'), 'No image element for logo');
+});
+
+QUnit.test('Default suitcase icon renders when logo image fails to load', function(assert) {
+    const done = assert.async();
+    const experienceData = [
+        {
+            title: "SDE",
+            company: "Failing Company",
+            logoUrl: "invalid-logo.png", // This URL will cause an error
+            period: "Jan 2022 - Dec 2022",
+            description: ["Fixed bugs."]
+        }
+    ];
+    populateExperience(experienceData);
+
+    const logoImg = document.querySelector('#experience-container .company-logo');
+    assert.ok(logoImg, 'Image element for logo exists initially');
+
+    // Simulate image load error
+    logoImg.dispatchEvent(new Event('error'));
+
+    setTimeout(() => {
+        const suitcaseIcon = document.querySelector('#experience-container .fa-suitcase');
+        assert.ok(suitcaseIcon, 'Default suitcase icon exists after image load error');
+        assert.notOk(document.querySelector('#experience-container .company-logo'), 'Image element is removed after error');
+        done();
+    }, 0); // Use setTimeout to allow event handlers to process
 });

@@ -47,6 +47,7 @@
         {
             "title": "SDE - 2",
             "company": "Rippling",
+            "logoUrl": "assets/images/logos/rippling-logo.png",
             "period": "Aug 2024 - Ongoing",
             "description": [
                 "Worked on US-GP Payroll migration and wrote facade gateway layer APIs for smooth migration.",
@@ -58,6 +59,7 @@
         {
             "title": "SDE - 2",
             "company": "Allen Digital",
+            "logoUrl": "assets/images/logos/allen-digital-logo.jpg",
             "period": "Jan 2024 - Aug 2024",
             "description": [
                 "Designed, implemented, and took end-to-end ownership of major features such as Student insights, Teacher insights, and a Question correction platform used by over 200K users.",
@@ -67,6 +69,7 @@
         {
             "title": "SDE-1, SDE - 2",
             "company": "ShareChat",
+            "logoUrl": "assets/images/logos/sharechat-logo.svg",
             "period": "Jan 2021 - Dec 2023",
             "description": [
                 "Worked on various cost optimization avenues, including migrating tables from Cloud Spanner to Scylla DB.",

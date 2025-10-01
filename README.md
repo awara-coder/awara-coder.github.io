@@ -48,6 +48,8 @@ awara-coder.github.io/
 ├── assets/
 │   ├── css/
 │   │   └── style.css          # Main stylesheet
+│   ├── images/
+│   │   └── logos/             # Company logos for experience section
 │   └── js/
 │       ├── components/        # UI components
 │       │   ├── about.js
@@ -79,7 +81,7 @@ All content is managed through the `data/data.json` file. Update the following s
 - **Personal Information**: Name, bio, about text
 - **Skills**: Add or modify skill categories
 - **Projects**: Add your projects with titles, descriptions, and links
-- **Experience**: Update your work history
+- **Experience**: Update your work history, including an optional `logoUrl` for company logos
 - **Accomplishments**: List your achievements
 - **Contact**: Update your contact information
 
@@ -96,6 +98,7 @@ All content is managed through the `data/data.json` file. Update the following s
 
 ## TODO:
 - Add slider wrapper for projects section.
+- Optimize images.
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Add support for running tests before deployment in CI.
