@@ -102,6 +102,8 @@ All content is managed through the `data/data.json` file. Update the following s
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Add support for running tests before deployment in CI.
+- Fix the blue line thickness issue.
+- Enhance the accomplishments section with links.
 
 
 ## License
