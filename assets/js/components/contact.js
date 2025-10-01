@@ -18,7 +18,7 @@ export const populateContact = (contact) => {
         if (contact.email) {
             contactHTML += `
                 <p class="flex items-center mb-2">
-                    <i class="fas fa-envelope w-6 text-center text-gray-600 mr-3"></i>
+                    <i class="fa-regular fa-envelope w-6 text-center text-gray-600 mr-3"></i>
                     <a href="mailto:${contact.email}" class="text-blue-600 no-underline transition-colors duration-200 hover:text-blue-800 hover:underline">${contact.email}</a>
                 </p>`;
         }
