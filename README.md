@@ -95,6 +95,7 @@ All content is managed through the `data/data.json` file. Update the following s
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Add loading section before content is loaded by javascript.
 - Add support for dark mode.
+- Add support for running tests before deployment in CI.
 - Add tests to ensure nothing breaks when introducing new content, styling changes.
 
 
