@@ -64,7 +64,9 @@ export const initApp = async () => {
         
         // Initialize smooth scrolling
         const { initSmoothScroll } = await import('../utils/smoothScroll.js');
-        initSmoothScroll();
+        setTimeout(() => {
+            initSmoothScroll();
+        }, 0);
 
       
     } catch (error) {

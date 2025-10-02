@@ -52,7 +52,7 @@ export const initSmoothScroll = () => {
             if (targetElement) {
                 // Scroll to the section
                 window.scrollTo({
-                    top: targetElement.offsetTop - 60, // Adjust for fixed header
+                    top: targetElement.offsetTop - 64, // Adjust for fixed header (h-16 = 64px)
                     behavior: 'smooth'
                 });
                 
