@@ -89,8 +89,6 @@ h2 {
   margin-bottom: 2rem;
   text-align: center;
   position: relative;
-  display: inline-block;
-  width: 100%;
 }
 
 h3 { 
@@ -366,6 +364,10 @@ section {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.navbar a {
+  font-size: 1.1rem; /* Slightly increase font size for nav bar text */
+}
+
 .navbar-collapse.show {
   display: block;
 }
@@ -395,7 +397,7 @@ a {
 
 a:hover {
   color: var(--primary-dark);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Forms */

@@ -79,7 +79,7 @@ export const populateProjects = (projects) => {
     // Add projects grid with header
     projectsContainer.innerHTML = `
         ${sectionHeader}
-        <div class="projects-grid">
+        <div class="projects-grid flex:auto">
             ${projectsHTML}
         </div>
     `;
