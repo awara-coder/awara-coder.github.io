@@ -80,10 +80,19 @@
         }
     ],
     "accomplishments": [
-        "Competitive Programming, Candidate Master (1958 rating) at CodeForces.",
-        "Redis, Inc | RU301: Running Redis at Scale, Redis Labs, Completed Running Redis at Scale course.",
-        "ACM ICPC International Collegiate Programming Contest, Kanpur, Secured 52 rank in Asia Kanpur ICPC Regional.",
-        "HackWithInfy, Infosys, Runner up in hackathon conducted at Infosys Pune. Also among top 109 students to qualify for the final round out of 100000+ participants."
+        {
+            "text": "Competitive Programming, Candidate Master (1958 rating) at CodeForces.",
+            "link": "https://codeforces.com/profile/awaracoder"
+        },
+        {
+            "text": "Redis, Inc | RU301: Running Redis at Scale, Redis Labs, Completed Running Redis at Scale course."
+        },
+        {
+            "text": "ACM ICPC International Collegiate Programming Contest, Kanpur, Secured 52 rank in Asia Kanpur ICPC Regional."
+        },
+        {
+            "text": "HackWithInfy, Infosys, Runner up in hackathon conducted at Infosys Pune. Also among top 109 students to qualify for the final round out of 100000+ participants."
+        }
     ],
     "contact": {
         "email": "sagar.june97p@gmail.com",
