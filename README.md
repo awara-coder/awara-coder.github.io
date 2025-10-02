@@ -2,6 +2,10 @@
 
 A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and CSS3. The website features a clean design and is fully customizable through a single JSON configuration file.
 
+## Live Demo
+
+🚀 [Visit the website](https://awara-coder.github.io)
+
 ## Features
 
 - **Fully Responsive** - Works on all devices
