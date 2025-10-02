@@ -37,6 +37,18 @@
                             700: '#1d4ed8',
                             800: '#1e40af',
                             900: '#1e3a8a',
+                        },
+                        secondary: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899', /* Matches --secondary */
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
                         }
                     },
                     fontFamily: {
@@ -93,7 +105,7 @@
         <div class="container mx-auto px-4 lg:px-6">
             <nav class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="#" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors dark:text-white flex items-center">
+                <a href="#" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors dark:text-white dark:hover:text-secondary-500 flex items-center">
                     <span class="bg-primary-600 text-white p-1.5 rounded mr-2">
                         <i class="fas fa-code text-sm"></i>
                     </span>
@@ -102,28 +114,28 @@
 
                 <!-- Right section on nav bar -->
                 <div class="flex items-center space-x-1">
-                    <button id="theme-toggle" type="button" class="p-2 rounded-md text-gray-700 hover:text-primary-600 focus:outline-none dark:text-gray-300">
+                    <button id="theme-toggle" type="button" class="p-2 rounded-md text-gray-700 hover:text-primary-600 focus:outline-none dark:text-gray-300 dark:hover:text-secondary-500">
                         <i id="theme-toggle-icon" class="fas fa-sun text-xl"></i>
                     </button>
                     
                     <!-- Desktop Navigation -->
                     <div class="hidden md:flex items-center space-x-1">
-                        <a href="#about" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300">
+                        <a href="#about" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300 dark:hover:text-secondary-500">
                             About
                         </a>
-                        <a href="#skills" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300">
+                        <a href="#skills" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300 dark:hover:text-secondary-500">
                             Skills
                         </a>
-                        <a href="#experience" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300">
+                        <a href="#experience" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300 dark:hover:text-secondary-500">
                             Experience
                         </a>
-                        <a href="#projects" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300">
+                        <a href="#projects" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300 dark:hover:text-secondary-500">
                             Projects
                         </a>
-                        <a href="#accomplishments" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300">
+                        <a href="#accomplishments" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300 dark:hover:text-secondary-500">
                             Accomplishments
                         </a>
-                        <a href="#contact" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300">
+                        <a href="#contact" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:text-base transition-all dark:text-gray-300 dark:hover:text-secondary-500">
                             Contact Me
                         </a>
                     </div>
@@ -139,22 +151,22 @@
             <!-- Mobile menu -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700">
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-secondary-500">
                         About
                     </a>
-                    <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700">
+                    <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-secondary-500">
                         Skills
                     </a>
-                    <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700">
+                    <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-secondary-500">
                         Experience
                     </a>
-                    <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700">
+                    <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-secondary-500">
                         Projects
                     </a>
-                    <a href="#accomplishments" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700">
+                    <a href="#accomplishments" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-secondary-500">
                         Accomplishments
                     </a>
-                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700">
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 hover:text-lg transition-all dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-secondary-500">
                         Contact Me
                     </a>
                 </div>
