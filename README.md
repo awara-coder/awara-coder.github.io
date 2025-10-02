@@ -20,7 +20,6 @@ A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and
 
 ### Prerequisites
 - A modern web browser
-- Node.js (optional, for development)
 - Python 3 (for local development server)
 
 ### Local Development
@@ -35,9 +34,6 @@ A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and
    ```bash
    # Using Python 3
    python3 -m http.server
-   
-   # Or using Python 2
-   # python -m SimpleHTTPServer
    ```
 
 3. **Open in your browser**
@@ -52,25 +48,11 @@ awara-coder.github.io/
 ├── assets/
 │   ├── css/
 │   │   └── style.css          # Main stylesheet
-│   ├── images/
-│   │   └── logos/             # Company logos for experience section
+│   ├── images/                # Images, including logos
+│   │   └── logos/
 │   └── js/
-│       ├── components/        # UI components
-│       │   ├── about.js
-│       │   ├── accomplishments.js
-│       │   ├── contact.js
-│       │   ├── experience.js
-│       │   ├── hero.js
-│       │   ├── portfolio.js   # Main component orchestrator
-│       │   ├── projects.js
-│       │   └── skills.js
-│       └── utils/             # Utility functions
-│           ├── backToTop.js   # Smooth scroll to top logic
-│           ├── dataLoader.js  # Data loading and initialization
-│           ├── dom.js         # DOM manipulation helpers
-│           ├── mobileMenu.js  # Mobile menu toggle and close logic
-│           ├── smoothScroll.js# Smooth scrolling logic
-│           └── themeToggle.js # Dark/Light theme toggle logic
+│       ├── components/        # Reusable UI components
+│       ├── utils/             # Utility functions
 ├── data/
 │   └── data.json             # All website content
 ├── index.html                # Main HTML file
@@ -91,12 +73,11 @@ All content is managed through the `data/data.json` file. Update the following s
 
 ### Styling
 - Main styles are in `assets/css/style.css`
-- Uses Bootstrap 4.5 for responsive layout
 - Custom CSS variables for colors and spacing
 
 ## Dependencies
 
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework (if used via CDN or compiled)
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Google Fonts](https://fonts.google.com/) - Typography
 
@@ -107,6 +88,7 @@ All content is managed through the `data/data.json` file. Update the following s
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Add support for running tests before deployment in CI.
 - Fix the blue line thickness issue.
+- Document how to run existing tests in the `tests/` directory.
 
 
 ## License
