@@ -84,10 +84,10 @@ All content is managed through the `data/data.json` file. Update the following s
 ## TODO:
 - Add slider wrapper for projects section.
 - Optimize images.
+- Setup linting and formatting.
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Add support for running tests before deployment in CI.
-- Fix the blue line thickness issue.
 - Document how to run existing tests in the `tests/` directory.
 
 
