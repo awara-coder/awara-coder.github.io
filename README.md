@@ -20,7 +20,7 @@ A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and
 
 ### Prerequisites
 - A modern web browser
-- Python 3 (for local development server)
+- Node.js and npm (Node Package Manager)
 
 ### Local Development
 
@@ -30,16 +30,30 @@ A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and
    cd awara-coder.github.io
    ```
 
-2. **Start the development server**
+2. **Install dependencies**
    ```bash
-   # Using Python 3
-   python3 -m http.server
+   npm install
    ```
 
-3. **Open in your browser**
+3. **Start the development server**
+   ```bash
+   npm run start
+   ```
+
+4. **Open in your browser**
    ```
    http://localhost:8000
    ```
+
+## Linting and Formatting
+
+This project uses ESLint, Stylelint, and Prettier to maintain code quality and consistency.
+
+- **Manual Formatting:** To format all JavaScript, CSS, and HTML files, run:
+  ```bash
+  npm run format
+  ```
+- **Pre-commit Hooks:** Linting and formatting are automatically applied to staged files before each commit using Husky and lint-staged.
 
 ## Project Structure
 
@@ -84,7 +98,6 @@ All content is managed through the `data/data.json` file. Update the following s
 ## TODO:
 - Add slider wrapper for projects section.
 - Optimize images.
-- Setup linting and formatting.
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Add support for running tests before deployment in CI.
