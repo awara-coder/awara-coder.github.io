@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and CSS3. The website features a clean design and is fully customizable through a single JSON configuration file.",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "test": "tests"
   },
   "devDependencies": {
+    "@eslint/js": "^9.37.0",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.3",
     "prettier": "^3.6.2",
@@ -36,7 +39,7 @@
   "homepage": "https://github.com/awara-coder/awara-coder.github.io#readme",
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "eslint --fix -c eslint.config.mjs",
       "prettier --write"
     ],
     "*.css": [
