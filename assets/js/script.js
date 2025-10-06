@@ -27,7 +27,7 @@ window.addEventListener('unhandledrejection', (event) => {
 // Wait for the DOM to be fully loaded before initializing the app
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded, initializing app...');
-    initApp().catch(error => {
+    initApp().catch((error) => {
         console.error('Error initializing application:', error);
         // Optionally show an error message to the user
         const errorDiv = document.createElement('div');
@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         errorDiv.style.border = '1px solid #ef9a9a';
         errorDiv.style.borderRadius = '4px';
         errorDiv.style.zIndex = '9999';
-        errorDiv.textContent = 'Failed to initialize the application. Please check the console for details.';
+        errorDiv.textContent =
+            'Failed to initialize the application. Please check the console for details.';
         document.body.appendChild(errorDiv);
     });
 
