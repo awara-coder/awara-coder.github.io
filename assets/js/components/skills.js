@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /**
  * Skills section component - Simple multi-column layout
  */
@@ -16,7 +15,6 @@ export const populateSkills = (skills) => {
         row.className = 'flex flex-wrap justify-center gap-6 mt-0'; // skills-row
 
         // Process each category
-        let categoryEl;
         if (Array.isArray(skills)) {
             // Handle array format (categories with descriptions)
             skills.forEach((category) => {
