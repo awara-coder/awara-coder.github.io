@@ -11,9 +11,9 @@ export const populateContact = (contact) => {
 
     try {
         console.log('Populating contact section with:', contact);
-        
+
         let contactHTML = '<div class="flex flex-col gap-4">'; // contact-methods
-        
+
         // Add email if available
         if (contact.email) {
             contactHTML += `
@@ -22,7 +22,7 @@ export const populateContact = (contact) => {
                     <a href="mailto:${contact.email}" class="text-blue-600 no-underline transition-colors duration-200 hover:text-blue-800 hover:underline">${contact.email}</a>
                 </p>`;
         }
-        
+
         // Add GitHub if available
         if (contact.github) {
             const githubUsername = contact.github.split('/').pop();
@@ -32,7 +32,7 @@ export const populateContact = (contact) => {
                     <a href="${contact.github}" class="text-blue-600 no-underline transition-colors duration-200 hover:text-blue-800 hover:underline" target="_blank" rel="noopener noreferrer">${githubUsername}</a>
                 </p>`;
         }
-        
+
         // Add LinkedIn if available
         if (contact.linkedin) {
             contactHTML += `
@@ -41,12 +41,12 @@ export const populateContact = (contact) => {
                     <a href="${contact.linkedin}" class="text-blue-600 no-underline transition-colors duration-200 hover:text-blue-800 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
                 </p>`;
         }
-        
+
         contactHTML += '</div>';
         contactContainer.innerHTML = contactHTML;
-        
     } catch (error) {
         console.error('Error populating contact section:', error);
-        contactContainer.innerHTML = '<p>Unable to load contact information. Please check the console for details.</p>';
+        contactContainer.innerHTML =
+            '<p>Unable to load contact information. Please check the console for details.</p>';
     }
 };

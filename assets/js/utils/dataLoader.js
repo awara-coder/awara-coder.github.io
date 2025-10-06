@@ -10,13 +10,13 @@ export const loadPortfolioData = async () => {
         console.log('Fetching portfolio data...');
         const response = await fetch('/data/data.json');
         console.log('Response status:', response.status);
-        
+
         if (!response.ok) {
             const errorText = await response.text();
             console.error('Error response:', errorText);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const data = await response.json();
         console.log('Successfully loaded portfolio data. Data structure:', {
             name: data.name,
@@ -26,14 +26,14 @@ export const loadPortfolioData = async () => {
             projects: data.projects?.length,
             experience: data.experience,
             accomplishments: data.accomplishments,
-            contact: data.contact
+            contact: data.contact,
         });
-        
+
         // Ensure we have the expected data structure
         if (!data || typeof data !== 'object') {
             throw new Error('Invalid data format: expected an object');
         }
-        
+
         initializePortfolio(data);
     } catch (error) {
         console.error('Error in loadPortfolioData:', error);
@@ -55,9 +55,13 @@ export const loadPortfolioData = async () => {
         if (loadingScreen) {
             loadingScreen.classList.add('hidden');
             // Optional: Remove the element from DOM after transition if needed
-            loadingScreen.addEventListener('transitionend', () => {
-                loadingScreen.remove();
-            }, { once: true });
+            loadingScreen.addEventListener(
+                'transitionend',
+                () => {
+                    loadingScreen.remove();
+                },
+                { once: true }
+            );
         }
     }
 };

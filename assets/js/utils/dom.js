@@ -15,7 +15,7 @@ export const getElements = (selector, parent = document) => [...parent.querySele
 
 export const setText = (elementOrSelector, text) => {
     let element;
-    
+
     // If elementOrSelector is a string, treat it as a selector
     if (typeof elementOrSelector === 'string') {
         element = document.getElementById(elementOrSelector);
@@ -31,7 +31,7 @@ export const setText = (elementOrSelector, text) => {
             return;
         }
     }
-    
+
     // Now set the text content
     element.textContent = text;
 };
@@ -42,7 +42,7 @@ export const setHTML = (element, html) => {
 
 export const appendChildren = (parent, ...children) => {
     if (!parent) return;
-    children.forEach(child => child && parent.appendChild(child));
+    children.forEach((child) => child && parent.appendChild(child));
 };
 
 export const addClass = (element, className) => {

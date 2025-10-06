@@ -14,6 +14,14 @@ export default [
       // Add any specific ESLint rules here
     }
   },
+  {
+    files: ["tests/**/*.js"],
+    languageOptions: {
+      globals: {
+        QUnit: true
+      }
+    }
+  },
   pluginJs.configs.recommended,
   configPrettier,
   {

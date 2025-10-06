@@ -16,14 +16,18 @@ export const initMobileMenu = () => {
             const isClickInsideMenu = mobileMenu.contains(event.target);
             const isClickOnButton = mobileMenuButton.contains(event.target);
 
-            if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+            if (
+                !isClickInsideMenu &&
+                !isClickOnButton &&
+                !mobileMenu.classList.contains('hidden')
+            ) {
                 mobileMenu.classList.add('hidden');
             }
         });
 
         // Close mobile menu when a navigation link is clicked
         const mobileNavLinks = mobileMenu.querySelectorAll('a');
-        mobileNavLinks.forEach(link => {
+        mobileNavLinks.forEach((link) => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });

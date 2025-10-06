@@ -41,7 +41,9 @@ export const initThemeToggle = () => {
     // Event listener for theme toggle button
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.classList.contains(THEME_DARK) ? THEME_DARK : THEME_LIGHT;
+            const currentTheme = htmlElement.classList.contains(THEME_DARK)
+                ? THEME_DARK
+                : THEME_LIGHT;
             const newTheme = currentTheme === THEME_DARK ? THEME_LIGHT : THEME_DARK;
             setTheme(newTheme);
         });
