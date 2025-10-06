@@ -53,6 +53,7 @@ This project uses ESLint, Stylelint, and Prettier to maintain code quality and c
   ```bash
   npm run format
   ```
+  *Note: This command performs a complete project cleanup, formatting all relevant files regardless of their staged status.*
 - **Pre-commit Hooks:** Linting and formatting are automatically applied to staged files before each commit using Husky and lint-staged.
 
 ## Project Structure
