@@ -147,7 +147,6 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-0.5rem);
     box-shadow: var(--shadow-lg);
 }
 
@@ -270,15 +269,19 @@ section {
 .mt-0 {
     margin-top: 0;
 }
+
 .mb-0 {
     margin-bottom: 0;
 }
+
 .mb-4 {
     margin-bottom: 1rem;
 }
+
 .mb-8 {
     margin-bottom: 2rem;
 }
+
 .mb-12 {
     margin-bottom: 3rem;
 }
@@ -381,9 +384,11 @@ a:hover {
 .elevation-1 {
     box-shadow: var(--elevation-1);
 }
+
 .elevation-2 {
     box-shadow: var(--elevation-2);
 }
+
 .elevation-4 {
     box-shadow: var(--elevation-4);
 }
