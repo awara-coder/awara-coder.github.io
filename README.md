@@ -98,10 +98,14 @@ All content is managed through the `data/data.json` file. Update the following s
 
 ## TODO:
 - Add slider wrapper for projects section.
+- Setup Jest unit tests
+- Setup playwright for E2E tests.
+- Write unit and E2E tests for all cases.
+- Switch to trunk based development.
+- Integrate running tests before deployment in CI.
 - Optimize images.
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
-- Add support for running tests before deployment in CI.
 - Document how to run existing tests in the `tests/` directory.
 
 
