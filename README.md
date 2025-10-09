@@ -104,6 +104,7 @@ All content is managed through the `data/data.json` file. Update the following s
 - Switch to trunk based development.
 - Integrate running tests before deployment in CI.
 - Optimize images.
+- Need to go back to ES6 from commonjs
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Document how to run existing tests in the `tests/` directory.

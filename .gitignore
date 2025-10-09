@@ -2,3 +2,6 @@ Resume - Sagar Gupta.pdf
 .DS_Store
 node_modules/
 .eslintcache
+playwright-report/
+test-results/
+coverage/
