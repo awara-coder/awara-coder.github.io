@@ -2,6 +2,7 @@
  * Smooth scrolling functionality with highlight effect
  */
 
+/* eslint-disable no-unused-vars */
 const highlightSection = (element) => {
     if (!element) return;
 
@@ -32,50 +33,13 @@ const highlightSection = (element) => {
     highlight.addEventListener('animationend', handleAnimationEnd);
 };
 
-export const initSmoothScroll = () => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-
-            // Handle home link (My Portfolio)
-            if (targetId === '#' || targetId === '/') {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth',
-                });
-                history.pushState(null, '', ' ');
-                return;
-            }
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Scroll to the section
-                window.scrollTo({
-                    top: targetElement.offsetTop - 64, // Adjust for fixed header (h-16 = 64px)
-                    behavior: 'smooth',
-                });
-
-                // Apply highlight effect
-                setTimeout(() => {
-                    highlightSection(targetElement);
-                }, 300); // Small delay to sync with scroll
-
-                // Update URL without adding to browser history
-                history.pushState(null, '', targetId);
-            }
-        });
-    });
-
-    // Handle direct URL hashes on page load
-    window.addEventListener('load', () => {
-        if (window.location.hash) {
-            const targetElement = document.querySelector(window.location.hash);
-            if (targetElement) {
-                setTimeout(() => {
-                    highlightSection(targetElement);
-                }, 1000); // Delay to ensure page is fully loaded
-            }
+export const smoothScroll = (event) => {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href');
+    if (targetId) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
-    });
+    }
 };
