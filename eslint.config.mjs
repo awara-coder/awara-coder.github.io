@@ -34,6 +34,13 @@ export default [
       globals: globals.node,
     },
   },
+  {
+    files: ["babel.config.js", "jest.config.js"],
+    languageOptions: {
+      sourceType: "module",
+      globals: globals.node,
+    },
+  },
   pluginJs.configs.recommended,
   configPrettier,
   {
