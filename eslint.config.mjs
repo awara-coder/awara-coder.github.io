@@ -21,9 +21,16 @@ export default [
     },
   },
   {
-    files: ["*.config.js", "*.config.mjs"],
+    files: ["*.config.js"],
     languageOptions: {
       sourceType: "commonjs",
+      globals: globals.node,
+    },
+  },
+  {
+    files: ["playwright.config.js"],
+    languageOptions: {
+      sourceType: "module",
       globals: globals.node,
     },
   },
