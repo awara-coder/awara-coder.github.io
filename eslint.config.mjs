@@ -14,6 +14,19 @@ export default [
       // Add any specific ESLint rules here
     }
   },
+  {
+    files: ["__tests__/**/*.js"],
+    languageOptions: {
+      globals: globals.jest,
+    },
+  },
+  {
+    files: ["*.config.js", "*.config.mjs"],
+    languageOptions: {
+      sourceType: "commonjs",
+      globals: globals.node,
+    },
+  },
   pluginJs.configs.recommended,
   configPrettier,
   {
