@@ -8,7 +8,6 @@ import { populateAccomplishments } from '@components/accomplishments.js';
 import { populateContact } from '@components/contact.js';
 
 let mockLoadPortfolioData = jest.fn();
-let mockInitSmoothScroll = jest.fn();
 
 // Mock all dependent populate functions
 jest.mock('@components/hero.js', () => ({
@@ -36,9 +35,6 @@ jest.mock('@components/contact.js', () => ({
 // Mock dynamic imports for initApp
 jest.mock('@utils/dataLoader.js', () => ({
     loadPortfolioData: mockLoadPortfolioData,
-}));
-jest.mock('@utils/smoothScroll.js', () => ({
-    initSmoothScroll: mockInitSmoothScroll,
 }));
 
 describe('portfolio.js', () => {
@@ -163,17 +159,12 @@ describe('portfolio.js', () => {
         beforeEach(() => {
             // Mock dynamic imports
             mockLoadPortfolioData.mockImplementation(() => Promise.resolve());
-
-            // Mock setTimeout
-            jest.spyOn(global, 'setTimeout').mockImplementation((fn) => fn());
         });
 
         test('should load portfolio data and initialize smooth scroll', async () => {
             await expect(initApp()).resolves.toBe();
 
             expect(mockLoadPortfolioData).toHaveBeenCalled();
-            expect(global.setTimeout).toHaveBeenCalled();
-            expect(mockInitSmoothScroll).toHaveBeenCalled();
             expect(console.error).not.toHaveBeenCalled();
         });
 
@@ -181,15 +172,6 @@ describe('portfolio.js', () => {
             mockLoadPortfolioData.mockRejectedValueOnce(new Error('Data load error'));
 
             await expect(initApp()).rejects.toThrow('Data load error');
-            expect(console.error).toHaveBeenCalledWith('Error in initApp:', expect.any(Error));
-        });
-
-        test('should catch and re-throw errors from initSmoothScroll', async () => {
-            mockInitSmoothScroll.mockImplementationOnce(() => {
-                throw new Error('Smooth scroll error');
-            });
-
-            await expect(initApp()).rejects.toThrow('Smooth scroll error');
             expect(console.error).toHaveBeenCalledWith('Error in initApp:', expect.any(Error));
         });
     });

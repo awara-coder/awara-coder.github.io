@@ -11,7 +11,6 @@ A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and
 - **Fully Responsive** - Works on all devices
 - **Modular Architecture** - Easy to maintain and extend
 - **Single Data Source** - All content managed through `data.json`
-- **Smooth Scrolling** - Enhanced user experience with smooth navigation
 - **Fixed Navigation** - Always accessible menu
 - **Modern UI** - Clean and professional design
 - **Loading Screen** - Enhances user experience during data fetching
@@ -116,7 +115,6 @@ All content is managed through the `data/data.json` file. Update the following s
 - Integrate running tests before deployment in CI.
 - Optimize images to webp/avif. Optimize Icons.
 - Reduce bundle size (look into tree shaking).
-- Need to go back to ES6 from commonjs
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Add validation on top of data.json
