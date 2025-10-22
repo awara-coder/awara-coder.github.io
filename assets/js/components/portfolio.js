@@ -56,11 +56,11 @@ export const initializePortfolio = (data) => {
 export const initApp = async () => {
     try {
         // Load portfolio data
-        const { loadPortfolioData } = await import('@utils/dataLoader.js');
+        const { loadPortfolioData } = await import('../utils/dataLoader.js');
         await loadPortfolioData();
 
         // Initialize smooth scrolling
-        const { initSmoothScroll } = await import('@utils/smoothScroll.js');
+        const { initSmoothScroll } = await import('../utils/smoothScroll.js');
         setTimeout(() => {
             initSmoothScroll();
         }, 0);
