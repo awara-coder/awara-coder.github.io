@@ -56,6 +56,19 @@ This project uses ESLint, Stylelint, and Prettier to maintain code quality and c
   *Note: This command performs a complete project cleanup, formatting all relevant files regardless of their staged status.*
 - **Pre-commit Hooks:** Linting and formatting are automatically applied to staged files before each commit using Husky and lint-staged.
 
+## Testing
+
+This project uses Jest for unit testing. Test files are co-located with their corresponding source files (e.g., `assets/js/components/portfolio.js` has its tests in `assets/js/components/portfolio.test.js`).
+
+- **Run all unit tests:**
+  ```bash
+  npm run test:unit
+  ```
+- **Run specific unit tests:**
+  ```bash
+  npm run test:unit -- <path/to/test/file.test.js>
+  ```
+
 ## Project Structure
 
 ```
@@ -98,19 +111,17 @@ All content is managed through the `data/data.json` file. Update the following s
 
 ## TODO:
 - Add slider wrapper for projects section.
-- Setup Jest unit tests
-- Setup playwright for E2E tests.
-- Write unit and E2E tests for all cases.
 - Switch to trunk based development.
+- Write E2E tests for all cases.
 - Integrate running tests before deployment in CI.
 - Optimize images to webp/avif. Optimize Icons.
 - Reduce bundle size (look into tree shaking).
 - Need to go back to ES6 from commonjs
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
-- Document how to run existing tests (now co-located with source files).
 - Add validation on top of data.json
-- Add support for running unit tests as pre commit hook
+-Add support for running unit tests as pre commit hook
+
 
 
 ## License

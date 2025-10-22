@@ -23,7 +23,7 @@ This document outlines the best practices and instructions for the Gemini LLM wh
 *   **`jest.config.js`:** Refer to this file for global Jest configurations.
 *   **Running Tests:**
     *   To run all unit tests: `npm run test:unit`
-    *   To run specific tests: `npm run test:unit -- <path/to/test/file.test.js>`
+    *   To run specific tests (remembering tests are co-located with source files): `npm run test:unit -- <path/to/test/file.test.js>`
 
 ## Mocking Specifics
 
