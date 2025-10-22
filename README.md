@@ -66,8 +66,8 @@ awara-coder.github.io/
 │   ├── images/                # Images, including logos
 │   │   └── logos/
 │   └── js/
-│       ├── components/        # Reusable UI components
-│       ├── utils/             # Utility functions
+│       ├── components/        # Reusable UI components (test files are co-located)
+│       ├── utils/             # Utility functions (test files are co-located)
 ├── data/
 │   └── data.json             # All website content
 ├── index.html                # Main HTML file
@@ -107,7 +107,7 @@ All content is managed through the `data/data.json` file. Update the following s
 - Need to go back to ES6 from commonjs
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
-- Document how to run existing tests in the `tests/` directory.
+- Document how to run existing tests (now co-located with source files).
 
 
 ## License
