@@ -20,8 +20,8 @@ describe('populateHero', () => {
         bioElement = document.getElementById('user-bio');
 
         // Spy on console.error and console.log
-        jest.spyOn(console, 'error').mockImplementation(() => {});
-        jest.spyOn(console, 'log').mockImplementation(() => {});
+        jest.spyOn(console, 'error');
+        jest.spyOn(console, 'log');
 
         getElementByIdSpy = jest.spyOn(document, 'getElementById');
 

@@ -19,10 +19,7 @@ export const initializePortfolio = (data) => {
             throw new Error('No data provided to initialize portfolio');
         }
 
-        // Initialize components with data if the data exists
-        if (data.name || data.bio) {
-            populateHero(data.name || '', data.bio || '');
-        }
+        populateHero(data.name || '', data.bio || '');
 
         if (data.about) {
             populateAbout(data.about);
@@ -59,11 +56,11 @@ export const initializePortfolio = (data) => {
 export const initApp = async () => {
     try {
         // Load portfolio data
-        const { loadPortfolioData } = await import('../utils/dataLoader.js');
+        const { loadPortfolioData } = await import('@utils/dataLoader.js');
         await loadPortfolioData();
 
         // Initialize smooth scrolling
-        const { initSmoothScroll } = await import('../utils/smoothScroll.js');
+        const { initSmoothScroll } = await import('@utils/smoothScroll.js');
         setTimeout(() => {
             initSmoothScroll();
         }, 0);

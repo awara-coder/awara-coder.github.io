@@ -7,6 +7,9 @@ import { populateExperience } from '@components/experience.js';
 import { populateAccomplishments } from '@components/accomplishments.js';
 import { populateContact } from '@components/contact.js';
 
+let mockLoadPortfolioData = jest.fn();
+let mockInitSmoothScroll = jest.fn();
+
 // Mock all dependent populate functions
 jest.mock('@components/hero.js', () => ({
     populateHero: jest.fn(),
@@ -32,18 +35,18 @@ jest.mock('@components/contact.js', () => ({
 
 // Mock dynamic imports for initApp
 jest.mock('@utils/dataLoader.js', () => ({
-    loadPortfolioData: jest.fn(),
+    loadPortfolioData: mockLoadPortfolioData,
 }));
 jest.mock('@utils/smoothScroll.js', () => ({
-    initSmoothScroll: jest.fn(),
+    initSmoothScroll: mockInitSmoothScroll,
 }));
 
 describe('portfolio.js', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-        jest.spyOn(console, 'log').mockImplementation(() => {});
-        jest.spyOn(console, 'error').mockImplementation(() => {});
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        jest.spyOn(console, 'log');
+        jest.spyOn(console, 'error');
+        jest.spyOn(console, 'warn');
     });
 
     afterEach(() => {
@@ -157,27 +160,16 @@ describe('portfolio.js', () => {
     });
 
     describe('initApp', () => {
-        let mockLoadPortfolioData;
-        let mockInitSmoothScroll;
-
         beforeEach(() => {
             // Mock dynamic imports
-            mockLoadPortfolioData = jest.fn(() => Promise.resolve());
-            mockInitSmoothScroll = jest.fn();
-
-            jest.mock('@utils/dataLoader.js', () => ({
-                loadPortfolioData: mockLoadPortfolioData,
-            }));
-            jest.mock('@utils/smoothScroll.js', () => ({
-                initSmoothScroll: mockInitSmoothScroll,
-            }));
+            mockLoadPortfolioData.mockImplementation(() => Promise.resolve());
 
             // Mock setTimeout
             jest.spyOn(global, 'setTimeout').mockImplementation((fn) => fn());
         });
 
         test('should load portfolio data and initialize smooth scroll', async () => {
-            await initApp();
+            await expect(initApp()).resolves.toBe();
 
             expect(mockLoadPortfolioData).toHaveBeenCalled();
             expect(global.setTimeout).toHaveBeenCalled();
@@ -193,7 +185,7 @@ describe('portfolio.js', () => {
         });
 
         test('should catch and re-throw errors from initSmoothScroll', async () => {
-            mockInitSmoothScroll.mockImplementation(() => {
+            mockInitSmoothScroll.mockImplementationOnce(() => {
                 throw new Error('Smooth scroll error');
             });
 
