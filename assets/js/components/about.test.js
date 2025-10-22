@@ -13,7 +13,7 @@ describe('populateAbout', () => {
         // Create the mock element here, which will be returned by the mocked getElementById
         aboutElement = { innerHTML: '', classList: { add: jest.fn(), remove: jest.fn() } };
 
-        // Mock document.getElementById to control its behavior and simulate element presence/absence.
+        // Mock document.getElementById
         jest.spyOn(document, 'getElementById').mockImplementation((id) => {
             if (id === 'user-about') {
                 // Only return aboutElement if it's supposed to be in the DOM
