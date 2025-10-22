@@ -103,11 +103,13 @@ All content is managed through the `data/data.json` file. Update the following s
 - Write unit and E2E tests for all cases.
 - Switch to trunk based development.
 - Integrate running tests before deployment in CI.
-- Optimize images.
+- Optimize images to webp/avif. Optimize Icons.
+- Reduce bundle size (look into tree shaking).
 - Need to go back to ES6 from commonjs
 - Add the data.json more extensible.
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Document how to run existing tests (now co-located with source files).
+- Add validation on top of data.json
 
 
 ## License
