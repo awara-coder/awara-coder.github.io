@@ -9,6 +9,7 @@ jest.mock('@utils/dom.js', () => ({
 describe('populateHero', () => {
     let nameElement;
     let bioElement;
+    let getElementByIdSpy;
 
     beforeEach(() => {
         document.body.innerHTML = `
@@ -21,6 +22,8 @@ describe('populateHero', () => {
         // Spy on console.error and console.log
         jest.spyOn(console, 'error').mockImplementation(() => {});
         jest.spyOn(console, 'log').mockImplementation(() => {});
+
+        getElementByIdSpy = jest.spyOn(document, 'getElementById');
 
         // Clear mock calls
         setText.mockClear();
@@ -36,9 +39,9 @@ describe('populateHero', () => {
         populateHero(name, bio);
 
         expect(console.log).toHaveBeenCalledWith('Populating hero section with:', { name, bio });
-        expect(document.getElementById).toHaveBeenCalledWith('user-name');
+        expect(getElementByIdSpy).toHaveBeenCalledWith('user-name');
         expect(setText).toHaveBeenCalledWith(nameElement, name);
-        expect(document.getElementById).toHaveBeenCalledWith('user-bio');
+        expect(getElementByIdSpy).toHaveBeenCalledWith('user-bio');
         expect(setText).toHaveBeenCalledWith(bioElement, bio);
         expect(console.error).not.toHaveBeenCalled();
     });
