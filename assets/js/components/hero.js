@@ -16,14 +16,14 @@ export const populateHero = (name, bio) => {
             console.error('Hero section name element not found in the DOM');
         } else {
             console.log('Setting name to:', name);
-            setText(nameElement, name || 'Your Name');
+            setText(nameElement, name || 'Sagar Gupta');
         }
 
         if (!bioElement) {
             console.error('Hero section bio element not found in the DOM');
         } else {
             console.log('Setting bio to:', bio);
-            setText(bioElement, bio || 'Your professional bio');
+            setText(bioElement, bio || '');
         }
     } catch (error) {
         console.error('Error in populateHero:', error);

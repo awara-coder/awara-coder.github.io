@@ -51,7 +51,7 @@ describe('populateHero', () => {
         const bio = 'Software Developer';
         populateHero(name, bio);
 
-        expect(setText).toHaveBeenCalledWith(nameElement, 'Your Name');
+        expect(setText).toHaveBeenCalledWith(nameElement, 'Sagar Gupta');
     });
 
     test('should use default bio if bio is not provided', () => {
@@ -59,7 +59,7 @@ describe('populateHero', () => {
         const bio = '';
         populateHero(name, bio);
 
-        expect(setText).toHaveBeenCalledWith(bioElement, 'Your professional bio');
+        expect(setText).toHaveBeenCalledWith(bioElement, '');
     });
 
     test('should log an error if name element is not found', () => {
