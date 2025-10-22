@@ -16,12 +16,16 @@ export const initThemeToggle = () => {
     const setTheme = (theme) => {
         if (theme === THEME_DARK) {
             htmlElement.classList.add(THEME_DARK);
-            themeToggleIcon.classList.remove('fa-sun');
-            themeToggleIcon.classList.add('fa-moon');
+            if (themeToggleIcon) {
+                themeToggleIcon.classList.remove('fa-sun');
+                themeToggleIcon.classList.add('fa-moon');
+            }
         } else {
             htmlElement.classList.remove(THEME_DARK);
-            themeToggleIcon.classList.remove('fa-moon');
-            themeToggleIcon.classList.add('fa-sun');
+            if (themeToggleIcon) {
+                themeToggleIcon.classList.remove('fa-moon');
+                themeToggleIcon.classList.add('fa-sun');
+            }
         }
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
     };
