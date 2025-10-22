@@ -110,6 +110,7 @@ All content is managed through the `data/data.json` file. Update the following s
 - Add support to release from a new branch and faster loading via minimization and bundling.
 - Document how to run existing tests (now co-located with source files).
 - Add validation on top of data.json
+- Add support for running unit tests as pre commit hook
 
 
 ## License
