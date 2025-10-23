@@ -104,7 +104,7 @@ All content is managed through the `data/data.json` file. Update the following s
 
 ## Dependencies
 
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework (if used via CDN or compiled)
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Google Fonts](https://fonts.google.com/) - Typography
 
