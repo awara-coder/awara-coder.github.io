@@ -31,11 +31,14 @@ export const populateProjects = (projects) => {
                         'max-w-md',
                         'min-w-80',
                     ];
-                    if (index === 0) {
-                        cardWrapperClasses.push('ml-auto');
-                    }
-                    if (index === projects.length - 1) {
-                        cardWrapperClasses.push('mr-auto');
+                    // Only add margin classes if there are multiple projects
+                    if (projects.length > 1) {
+                        if (index === 0) {
+                            cardWrapperClasses.push('ml-auto');
+                        }
+                        if (index === projects.length - 1) {
+                            cardWrapperClasses.push('mr-auto');
+                        }
                     }
 
                     return `

@@ -2,6 +2,9 @@
  * Main entry point for the portfolio application
  */
 
+// Import styles
+import '../css/style.css';
+
 import { initApp } from './components/portfolio.js';
 import { initBackToTopButton } from './utils/backToTop.js';
 import { initThemeToggle } from './utils/themeToggle.js';
