@@ -36,7 +36,7 @@ A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and
 
 3. **Start the development server**
    ```bash
-   npm run start
+   npm run dev
    ```
 
 4. **Open in your browser**

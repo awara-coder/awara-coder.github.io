@@ -4,7 +4,7 @@ const config = {
     transform: {
         '^.+.js$': 'babel-jest',
     },
-    testPathIgnorePatterns: ['/node_modules/', '/e2e/'],
+    testPathIgnorePatterns: ['/node_modules/', '/e2e/', '/dist/'],
     moduleNameMapper: {
         '^@components/(.*)$': '<rootDir>/assets/js/components/$1',
         '^@utils/(.*)$': '<rootDir>/assets/js/utils/$1',

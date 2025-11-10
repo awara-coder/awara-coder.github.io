@@ -3,32 +3,11 @@
  */
 
 import { initializePortfolio } from '../components/portfolio.js';
+import data from '../../../data/data.json';
 
 export const loadPortfolioData = async () => {
     const loadingScreen = document.getElementById('loading-screen');
     try {
-        console.log('Fetching portfolio data...');
-        const response = await fetch('/data/data.json');
-        console.log('Response status:', response.status);
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('Error response:', errorText);
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log('Successfully loaded portfolio data. Data structure:', {
-            name: data.name,
-            bio: data.bio,
-            about: data.about,
-            skills: data.skills?.length,
-            projects: data.projects?.length,
-            experience: data.experience,
-            accomplishments: data.accomplishments,
-            contact: data.contact,
-        });
-
         // Ensure we have the expected data structure
         if (!data || typeof data !== 'object') {
             throw new Error('Invalid data format: expected an object');
