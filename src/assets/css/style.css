@@ -378,26 +378,17 @@ section {
 }
 
 /* Links */
-a {
+
+/* Only style text links, not buttons */
+a:not(.btn, .inline-flex) {
     color: var(--primary);
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
 
-a:hover {
+a:not(.btn, .inline-flex):hover {
     color: var(--primary-dark);
     text-decoration: none;
-}
-
-/* Navbar */
-.navbar {
-    background-color: var(--primary);
-    color: white;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
-}
-
-.navbar a {
-    font-size: 1.1rem; /* Slightly increase font size for nav bar text */
 }
 
 /* Forms */
