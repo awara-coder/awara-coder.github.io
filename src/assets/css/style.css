@@ -1,4 +1,4 @@
-@import url('tailwindcss');
+@import 'tailwindcss';
 
 @variant dark (&:where(.dark, .dark *));
 
@@ -94,7 +94,7 @@
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
     --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
     --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
     --radius: 0.5rem;
 }
 
@@ -130,10 +130,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
+    overflow: hidden auto;
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-y: auto;
 }
 
 /* Typography */
@@ -301,9 +303,10 @@ section {
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 24rem));
     gap: 2rem;
     margin-top: 2rem;
+    justify-content: center;
 }
 
 /* Section Headers */
@@ -371,6 +374,12 @@ section {
     section {
         padding: 4rem 0;
     }
+}
+
+/* Footer styles - ensure visibility on all devices */
+footer {
+    position: relative;
+    width: 100%;
 }
 
 .fade-in-up {

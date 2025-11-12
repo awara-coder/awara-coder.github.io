@@ -17,32 +17,14 @@ export const populateProjects = (projects) => {
     // Add projects grid with header
     projectsContainer.innerHTML = `
         ${sectionHeader}
-        <div class="projects-grid flex overflow-x-auto gap-6 mt-0 pb-4 custom-scrollbar">
+        <div class="projects-grid">
             ${projects
                 .map((project, index) => {
                     // Add staggered animation delay
                     const delay = index * 0.1 + 0.2;
-                    const cardWrapperClasses = [
-                        'fade-in-up',
-                        'flex-none',
-                        'w-full',
-                        'sm:w-1/2',
-                        'lg:w-1/3',
-                        'max-w-md',
-                        'min-w-80',
-                    ];
-                    // Only add margin classes if there are multiple projects
-                    if (projects.length > 1) {
-                        if (index === 0) {
-                            cardWrapperClasses.push('ml-auto');
-                        }
-                        if (index === projects.length - 1) {
-                            cardWrapperClasses.push('mr-auto');
-                        }
-                    }
 
                     return `
-                    <div class="${cardWrapperClasses.join(' ')}" style="animation-delay: ${delay}s">
+                    <div class="fade-in-up" style="animation-delay: ${delay}s">
                         <div class="card h-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500">
                             ${
                                 project.image

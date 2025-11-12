@@ -6,6 +6,7 @@
       {
         "ignoreAtRules": ["variant", "theme"]
       }
-    ]
+    ],
+    "import-notation": null
   }
 }
