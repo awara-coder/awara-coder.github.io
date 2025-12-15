@@ -5,6 +5,9 @@ import configPrettier from 'eslint-config-prettier';
 
 export default [
     {
+        ignores: ['dist/**', 'node_modules/**', 'coverage/**'],
+    },
+    {
         languageOptions: {
             globals: globals.browser,
             ecmaVersion: 12,
@@ -21,9 +24,9 @@ export default [
         },
     },
     {
-        files: ['*.config.js'],
+        files: ['*.config.js', 'vite.config.js'],
         languageOptions: {
-            sourceType: 'commonjs',
+            sourceType: 'module',
             globals: globals.node,
         },
     },

@@ -36,7 +36,7 @@ A modern, responsive portfolio website built with vanilla JavaScript, HTML5, and
 
 3. **Start the development server**
    ```bash
-   npm run start
+   npm run dev
    ```
 
 4. **Open in your browser**
@@ -104,7 +104,7 @@ All content is managed through the `data/data.json` file. Update the following s
 
 ## Dependencies
 
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework (if used via CDN or compiled)
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Google Fonts](https://fonts.google.com/) - Typography
 
