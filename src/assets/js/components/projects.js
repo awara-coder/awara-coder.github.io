@@ -2,6 +2,8 @@
  * Projects section with modern design
  */
 
+import { sanitizeUrl } from '../utils/validator.js';
+
 export const populateProjects = (projects) => {
     const projectsContainer = document.getElementById('projects-container');
     if (!projectsContainer) return;
@@ -65,10 +67,10 @@ export const populateProjects = (projects) => {
                                         ${
                                             project.link
                                                 ? `
-                                        <a 
-                                            href="${project.link}" 
-                                            class="btn btn-primary" 
-                                            target="_blank" 
+                                        <a
+                                            href="${sanitizeUrl(project.link)}"
+                                            class="btn btn-primary"
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label="View ${project.title}"
                                         >
@@ -81,8 +83,8 @@ export const populateProjects = (projects) => {
                                         ${
                                             project.github
                                                 ? `
-                                            <a 
-                                                href="${project.github}" 
+                                            <a
+                                                href="${sanitizeUrl(project.github)}"
                                                 class="btn btn-outline btn-sm border-gray-300 text-gray-700 bg-white hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
                                                 target="_blank"
                                                 rel="noopener noreferrer"

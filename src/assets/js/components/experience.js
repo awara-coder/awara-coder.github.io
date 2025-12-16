@@ -2,6 +2,8 @@
  * Experience section component
  */
 
+import { sanitizeUrl } from '../utils/validator.js';
+
 export const populateExperience = (experience) => {
     const experienceContainer = document.getElementById('experience-container');
     if (!experienceContainer) return;
@@ -11,21 +13,16 @@ export const populateExperience = (experience) => {
             // The fallback icon now acts as a base layer.
             const fallbackIconHTML = `<div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 grid place-items-center"><i class="fas fa-suitcase text-2xl text-gray-400 dark:text-gray-500"></i></div>`;
 
-            // The image is an overlay that will be removed on error.
-            const imageHTML = `
-            <img 
-                src="${exp.logoUrl}" 
-                alt="${exp.company} Logo" 
-                class="company-logo w-12 h-12 rounded-full object-cover border border-gray-200 dark:border-gray-700" 
-                style="position: absolute; top: 0; left: 0;"
-                onerror="this.remove()"
-            >`;
+            // The image will be added via JavaScript to handle errors properly
+            const imageContainerHTML = exp.logoUrl
+                ? `<div class="company-logo-container" data-logo-url="${sanitizeUrl(exp.logoUrl)}" data-company="${exp.company}"></div>`
+                : '';
 
             return `
         <div class="experience-item mb-6 flex items-start space-x-4">
             <div class="flex-shrink-0 mt-1" style="position: relative;">
                 ${fallbackIconHTML}
-                ${exp.logoUrl ? imageHTML : ''}
+                ${imageContainerHTML}
             </div>
             <div class="flex-grow">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">${exp.title}</h3>
@@ -41,4 +38,29 @@ export const populateExperience = (experience) => {
         .join('');
 
     experienceContainer.innerHTML = experienceHTML;
+
+    // Add company logos with proper error handling (no inline handlers)
+    const logoContainers = experienceContainer.querySelectorAll('.company-logo-container');
+    logoContainers.forEach((container) => {
+        const logoUrl = container.dataset.logoUrl;
+        const company = container.dataset.company;
+
+        if (logoUrl && logoUrl !== '#') {
+            const img = document.createElement('img');
+            img.src = logoUrl;
+            img.alt = `${company} Logo`;
+            img.className =
+                'company-logo w-12 h-12 rounded-full object-cover border border-gray-200 dark:border-gray-700';
+            img.style.position = 'absolute';
+            img.style.top = '0';
+            img.style.left = '0';
+
+            // Use addEventListener instead of inline onerror
+            img.addEventListener('error', () => {
+                img.remove();
+            });
+
+            container.appendChild(img);
+        }
+    });
 };
