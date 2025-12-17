@@ -2,6 +2,9 @@
  * Projects section with modern design
  */
 
+// Module-level observer to prevent memory leaks
+let projectObserver = null;
+
 export const populateProjects = (projects) => {
     const projectsContainer = document.getElementById('projects-container');
     if (!projectsContainer) return;
@@ -29,9 +32,9 @@ export const populateProjects = (projects) => {
                             ${
                                 project.image
                                     ? `
-                                <img 
-                                    src="${project.image}" 
-                                    alt="${project.title}" 
+                                <img
+                                    src="${project.image}"
+                                    alt="${project.title}"
                                     class="card-img"
                                     loading="lazy"
                                 >
@@ -65,10 +68,10 @@ export const populateProjects = (projects) => {
                                         ${
                                             project.link
                                                 ? `
-                                        <a 
-                                            href="${project.link}" 
-                                            class="btn btn-primary" 
-                                            target="_blank" 
+                                        <a
+                                            href="${project.link}"
+                                            class="btn btn-primary"
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label="View ${project.title}"
                                         >
@@ -81,8 +84,8 @@ export const populateProjects = (projects) => {
                                         ${
                                             project.github
                                                 ? `
-                                            <a 
-                                                href="${project.github}" 
+                                            <a
+                                                href="${project.github}"
                                                 class="btn btn-outline btn-sm border-gray-300 text-gray-700 bg-white hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -109,14 +112,22 @@ export const populateProjects = (projects) => {
 
     // Add intersection observer for scroll animations
     const animateOnScroll = () => {
+        // Cleanup previous observer to prevent memory leaks
+        if (projectObserver) {
+            projectObserver.disconnect();
+            projectObserver = null;
+        }
+
         const elements = document.querySelectorAll('.fade-in-up');
 
-        const observer = new IntersectionObserver(
+        projectObserver = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
+                        // Unobserve after animation to free memory
+                        projectObserver.unobserve(entry.target);
                     }
                 });
             },
@@ -127,7 +138,7 @@ export const populateProjects = (projects) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(el);
+            projectObserver.observe(el);
         });
     };
 
@@ -136,5 +147,16 @@ export const populateProjects = (projects) => {
         document.addEventListener('DOMContentLoaded', animateOnScroll);
     } else {
         animateOnScroll();
+    }
+};
+
+/**
+ * Cleanup function for SPA scenarios or component unmounting
+ * Call this to properly clean up the IntersectionObserver
+ */
+export const cleanupProjects = () => {
+    if (projectObserver) {
+        projectObserver.disconnect();
+        projectObserver = null;
     }
 };
