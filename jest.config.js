@@ -6,8 +6,8 @@ const config = {
     },
     testPathIgnorePatterns: ['/node_modules/', '/e2e/', '/dist/'],
     moduleNameMapper: {
-        '^@components/(.*)$': '<rootDir>/assets/js/components/$1',
-        '^@utils/(.*)$': '<rootDir>/assets/js/utils/$1',
+        '^@components/(.*)$': '<rootDir>/src/assets/js/components/$1',
+        '^@utils/(.*)$': '<rootDir>/src/assets/js/utils/$1',
     },
 };
 
