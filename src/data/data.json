@@ -45,10 +45,21 @@
     ],
     "experience": [
         {
+            "title": "SDE - 3",
+            "company": "Interface.AI",
+            "logoUrl": "https://interface.ai/wp-content/uploads/2023/07/cropped-interface-favicon-512x512-1-192x192.png",
+            "period": "Dec 2025 - April 2026",
+            "description": [
+                "Worked on Intelligent banking offers that injected offers at the end of banking intent completion. Led to conversion of 3 businesses.",
+                "Engineered a Semantic Cache layer for \"canned\" responses, utilizing vector similarity to provide fast knowledge query resolution and drastically reducing latency for frequently asked questions from 7s to 400ms.",
+                "Spearheaded the development of a Multi-agent POC for Credit union, demonstrating the bot’s ability to operate effectively within Microsoft 365 Agents SDK where it functions as a non-primary participant."
+            ]
+        },
+        {
             "title": "SDE - 2",
             "company": "Rippling",
             "logoUrl": "/assets/images/logos/rippling-logo.png",
-            "period": "Aug 2024 - Ongoing",
+            "period": "Aug 2024 - September 2025",
             "description": [
                 "Worked on US-GP Payroll migration and wrote facade gateway layer APIs for smooth migration.",
                 "Successfully took ownership of and completed the Germany Pensions project as Engineering DRI.",
